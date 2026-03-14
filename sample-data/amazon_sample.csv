@@ -1,0 +1,151 @@
+Date,Campaign Name,Campaign ID,Total Spend ($),Impressions,Clicks,Attributed Sales (14d),Attributed Orders (14d),New-to-Brand Orders,New-to-Brand Sales
+2026-02-12,Sponsored Products - Kitchen Essentials,AMZ-001,312.45,48200,820,1842.30,38,14,621.80
+2026-02-12,Sponsored Display - Home & Garden,AMZ-002,198.60,72100,410,890.40,18,7,289.50
+2026-02-12,Sponsored Brands - Premium Cookware,AMZ-003,445.20,31400,1140,2980.50,62,22,980.20
+2026-02-12,DSP Retargeting - Lifestyle,AMZ-004,267.80,215000,380,1340.90,26,8,412.00
+2026-02-12,Sponsored Products - Outdoor Living,AMZ-005,183.90,29800,640,1102.40,23,10,380.50
+2026-02-13,Sponsored Products - Kitchen Essentials,AMZ-001,298.70,45600,790,1760.20,36,13,595.30
+2026-02-13,Sponsored Display - Home & Garden,AMZ-002,210.30,68900,435,940.20,19,8,302.10
+2026-02-13,Sponsored Brands - Premium Cookware,AMZ-003,428.50,30200,1090,2840.60,59,21,945.80
+2026-02-13,DSP Retargeting - Lifestyle,AMZ-004,252.40,208000,365,1280.40,24,7,389.50
+2026-02-13,Sponsored Products - Outdoor Living,AMZ-005,196.20,31200,670,1180.90,25,11,402.30
+2026-02-14,Sponsored Products - Kitchen Essentials,AMZ-001,325.80,51300,850,1920.40,40,15,645.80
+2026-02-14,Sponsored Display - Home & Garden,AMZ-002,225.40,74500,445,995.20,20,8,318.50
+2026-02-14,Sponsored Brands - Premium Cookware,AMZ-003,468.90,33100,1210,3140.70,65,24,1028.60
+2026-02-14,DSP Retargeting - Lifestyle,AMZ-004,278.60,221000,395,1398.50,27,9,428.70
+2026-02-14,Sponsored Products - Outdoor Living,AMZ-005,201.40,32600,695,1224.80,26,12,418.90
+2026-02-15,Sponsored Products - Kitchen Essentials,AMZ-001,289.30,44200,770,1698.60,35,12,572.40
+2026-02-15,Sponsored Display - Home & Garden,AMZ-002,192.80,66300,398,862.40,17,6,278.30
+2026-02-15,Sponsored Brands - Premium Cookware,AMZ-003,415.70,29400,1050,2790.30,57,20,918.40
+2026-02-15,DSP Retargeting - Lifestyle,AMZ-004,241.90,199000,352,1218.60,23,6,372.80
+2026-02-15,Sponsored Products - Outdoor Living,AMZ-005,178.60,28100,615,1068.40,22,9,364.20
+2026-02-16,Sponsored Products - Kitchen Essentials,AMZ-001,342.10,52800,875,2018.60,42,16,672.80
+2026-02-16,Sponsored Display - Home & Garden,AMZ-002,218.70,71800,428,978.40,19,8,312.40
+2026-02-16,Sponsored Brands - Premium Cookware,AMZ-003,482.30,34200,1245,3248.90,68,25,1062.80
+2026-02-16,DSP Retargeting - Lifestyle,AMZ-004,285.40,225000,408,1432.60,28,9,438.90
+2026-02-16,Sponsored Products - Outdoor Living,AMZ-005,208.90,33800,718,1268.40,27,12,432.50
+2026-02-17,Sponsored Products - Kitchen Essentials,AMZ-001,358.20,55100,912,2118.40,44,17,702.60
+2026-02-17,Sponsored Display - Home & Garden,AMZ-002,234.50,76200,458,1048.60,21,9,338.20
+2026-02-17,Sponsored Brands - Premium Cookware,AMZ-003,501.80,35800,1298,3368.40,71,26,1102.40
+2026-02-17,DSP Retargeting - Lifestyle,AMZ-004,298.70,232000,422,1498.30,30,10,458.20
+2026-02-17,Sponsored Products - Outdoor Living,AMZ-005,218.40,35200,742,1318.60,28,13,448.80
+2026-02-18,Sponsored Products - Kitchen Essentials,AMZ-001,378.50,58400,962,2238.60,47,18,742.80
+2026-02-18,Sponsored Display - Home & Garden,AMZ-002,248.20,80100,482,1108.40,22,9,356.80
+2026-02-18,Sponsored Brands - Premium Cookware,AMZ-003,528.40,37600,1358,3548.80,75,28,1162.40
+2026-02-18,DSP Retargeting - Lifestyle,AMZ-004,312.80,242000,440,1568.60,32,11,482.40
+2026-02-18,Sponsored Products - Outdoor Living,AMZ-005,228.60,36800,768,1378.40,29,13,468.20
+2026-02-19,Sponsored Products - Kitchen Essentials,AMZ-001,396.40,61200,1008,2348.20,49,19,778.60
+2026-02-19,Sponsored Display - Home & Garden,AMZ-002,261.30,83800,505,1162.40,23,10,374.80
+2026-02-19,Sponsored Brands - Premium Cookware,AMZ-003,548.70,39200,1412,3678.40,78,29,1208.60
+2026-02-19,DSP Retargeting - Lifestyle,AMZ-004,325.40,251000,458,1628.40,33,11,498.80
+2026-02-19,Sponsored Products - Outdoor Living,AMZ-005,238.40,38200,798,1428.60,30,14,488.20
+2026-02-20,Sponsored Products - Kitchen Essentials,AMZ-001,312.80,48800,812,1848.40,38,14,618.80
+2026-02-20,Sponsored Display - Home & Garden,AMZ-002,205.60,69400,418,918.40,18,7,295.80
+2026-02-20,Sponsored Brands - Premium Cookware,AMZ-003,445.80,31600,1148,2988.40,63,23,985.60
+2026-02-20,DSP Retargeting - Lifestyle,AMZ-004,268.40,216000,382,1348.20,27,9,414.80
+2026-02-20,Sponsored Products - Outdoor Living,AMZ-005,188.20,30200,645,1118.40,24,10,386.80
+2026-02-21,Sponsored Products - Kitchen Essentials,AMZ-001,328.60,51200,848,1948.80,41,15,648.20
+2026-02-21,Sponsored Display - Home & Garden,AMZ-002,218.40,72800,438,978.60,19,8,312.80
+2026-02-21,Sponsored Brands - Premium Cookware,AMZ-003,468.20,33000,1208,3148.60,66,25,1032.40
+2026-02-21,DSP Retargeting - Lifestyle,AMZ-004,281.60,224000,398,1412.40,28,9,432.60
+2026-02-21,Sponsored Products - Outdoor Living,AMZ-005,198.40,32000,672,1192.80,25,11,408.40
+2026-02-22,Sponsored Products - Kitchen Essentials,AMZ-001,345.20,53800,882,2048.60,43,16,678.40
+2026-02-22,Sponsored Display - Home & Garden,AMZ-002,228.80,75200,452,1018.40,20,8,328.60
+2026-02-22,Sponsored Brands - Premium Cookware,AMZ-003,492.40,34800,1268,3298.80,69,26,1078.20
+2026-02-22,DSP Retargeting - Lifestyle,AMZ-004,292.40,230000,412,1468.80,29,10,448.40
+2026-02-22,Sponsored Products - Outdoor Living,AMZ-005,208.60,33400,705,1258.60,26,12,428.80
+2026-02-23,Sponsored Products - Kitchen Essentials,AMZ-001,362.80,56400,918,2148.40,45,17,712.60
+2026-02-23,Sponsored Display - Home & Garden,AMZ-002,240.20,78400,468,1068.20,21,9,344.80
+2026-02-23,Sponsored Brands - Premium Cookware,AMZ-003,512.80,36200,1328,3448.60,72,27,1122.60
+2026-02-23,DSP Retargeting - Lifestyle,AMZ-004,305.80,238000,428,1532.60,31,10,468.40
+2026-02-23,Sponsored Products - Outdoor Living,AMZ-005,218.80,35600,728,1308.40,27,12,448.60
+2026-02-24,Sponsored Products - Kitchen Essentials,AMZ-001,380.40,59200,958,2252.40,47,18,748.40
+2026-02-24,Sponsored Display - Home & Garden,AMZ-002,252.60,81200,492,1128.60,22,9,362.40
+2026-02-24,Sponsored Brands - Premium Cookware,AMZ-003,535.20,37800,1382,3588.20,76,28,1178.80
+2026-02-24,DSP Retargeting - Lifestyle,AMZ-004,318.60,246000,445,1598.40,32,11,488.60
+2026-02-24,Sponsored Products - Outdoor Living,AMZ-005,232.20,37600,768,1378.40,29,13,468.20
+2026-02-25,Sponsored Products - Kitchen Essentials,AMZ-001,398.20,62000,1002,2348.20,49,19,782.60
+2026-02-25,Sponsored Display - Home & Garden,AMZ-002,264.80,84600,510,1178.40,24,10,380.20
+2026-02-25,Sponsored Brands - Premium Cookware,AMZ-003,558.40,39800,1438,3748.80,79,30,1228.40
+2026-02-25,DSP Retargeting - Lifestyle,AMZ-004,332.40,254000,462,1658.80,33,12,508.40
+2026-02-25,Sponsored Products - Outdoor Living,AMZ-005,242.60,38800,802,1448.80,30,14,492.40
+2026-02-26,Sponsored Products - Kitchen Essentials,AMZ-001,318.60,49800,822,1872.60,39,15,628.80
+2026-02-26,Sponsored Display - Home & Garden,AMZ-002,212.40,70800,428,948.40,19,8,305.60
+2026-02-26,Sponsored Brands - Premium Cookware,AMZ-003,458.40,32400,1178,3068.80,64,24,1005.60
+2026-02-26,DSP Retargeting - Lifestyle,AMZ-004,275.20,220000,390,1382.60,28,9,424.80
+2026-02-26,Sponsored Products - Outdoor Living,AMZ-005,192.40,31000,658,1148.40,24,11,394.40
+2026-02-27,Sponsored Products - Kitchen Essentials,AMZ-001,335.40,52200,862,2012.40,42,16,668.40
+2026-02-27,Sponsored Display - Home & Garden,AMZ-002,225.20,73800,448,1008.60,20,8,322.40
+2026-02-27,Sponsored Brands - Premium Cookware,AMZ-003,482.60,34400,1258,3368.60,70,26,1152.40
+2026-02-27,DSP Retargeting - Lifestyle,AMZ-004,288.60,228000,404,1448.40,29,10,444.20
+2026-02-27,Sponsored Products - Outdoor Living,AMZ-005,204.20,32800,688,1228.40,26,12,418.80
+2026-02-28,Sponsored Products - Kitchen Essentials,AMZ-001,352.80,55000,902,2112.40,44,17,702.40
+2026-02-28,Sponsored Display - Home & Garden,AMZ-002,238.60,77200,462,1038.60,21,8,334.40
+2026-02-28,Sponsored Brands - Premium Cookware,AMZ-003,505.40,36000,1308,3488.40,73,27,1138.40
+2026-02-28,DSP Retargeting - Lifestyle,AMZ-004,302.20,236000,420,1518.80,31,11,468.60
+2026-02-28,Sponsored Products - Outdoor Living,AMZ-005,215.60,34800,715,1292.40,27,12,442.60
+2026-03-01,Sponsored Products - Kitchen Essentials,AMZ-001,368.20,57600,942,2188.60,46,18,728.40
+2026-03-01,Sponsored Display - Home & Garden,AMZ-002,248.40,79400,478,1108.40,22,9,358.60
+2026-03-01,Sponsored Brands - Premium Cookware,AMZ-003,525.80,37200,1358,3628.80,77,29,1198.40
+2026-03-01,DSP Retargeting - Lifestyle,AMZ-004,314.60,244000,438,1578.80,32,11,484.40
+2026-03-01,Sponsored Products - Outdoor Living,AMZ-005,226.80,36400,748,1348.60,28,13,458.40
+2026-03-02,Sponsored Products - Kitchen Essentials,AMZ-001,384.60,60200,982,2288.40,48,18,762.80
+2026-03-02,Sponsored Display - Home & Garden,AMZ-002,258.80,82200,498,1148.60,23,9,370.80
+2026-03-02,Sponsored Brands - Premium Cookware,AMZ-003,545.20,38600,1402,3748.40,79,30,1228.40
+2026-03-02,DSP Retargeting - Lifestyle,AMZ-004,326.80,250000,452,1638.80,33,12,502.80
+2026-03-02,Sponsored Products - Outdoor Living,AMZ-005,238.40,38000,780,1408.60,30,14,482.80
+2026-03-03,Sponsored Products - Kitchen Essentials,AMZ-001,402.40,63000,1022,2392.40,50,20,802.40
+2026-03-03,Sponsored Display - Home & Garden,AMZ-002,270.40,85800,518,1198.40,24,10,388.40
+2026-03-03,Sponsored Brands - Premium Cookware,AMZ-003,568.60,40400,1462,3888.80,82,31,1268.60
+2026-03-03,DSP Retargeting - Lifestyle,AMZ-004,340.20,256000,468,1708.40,34,12,522.40
+2026-03-03,Sponsored Products - Outdoor Living,AMZ-005,248.20,39400,808,1468.40,31,14,502.40
+2026-03-04,Sponsored Products - Kitchen Essentials,AMZ-001,324.80,50400,832,1912.40,40,15,638.40
+2026-03-04,Sponsored Display - Home & Garden,AMZ-002,215.60,71600,432,962.40,19,8,308.40
+2026-03-04,Sponsored Brands - Premium Cookware,AMZ-003,468.40,33200,1218,3188.80,67,25,1048.40
+2026-03-04,DSP Retargeting - Lifestyle,AMZ-004,280.60,224000,396,1408.40,28,10,432.80
+2026-03-04,Sponsored Products - Outdoor Living,AMZ-005,194.80,31400,662,1162.40,24,11,398.80
+2026-03-05,Sponsored Products - Kitchen Essentials,AMZ-001,342.40,53200,872,2048.40,43,16,678.40
+2026-03-05,Sponsored Display - Home & Garden,AMZ-002,228.40,74600,452,1018.40,20,8,328.80
+2026-03-05,Sponsored Brands - Premium Cookware,AMZ-003,492.80,35000,1278,3388.60,71,27,1102.80
+2026-03-05,DSP Retargeting - Lifestyle,AMZ-004,294.20,232000,418,1478.60,30,10,452.40
+2026-03-05,Sponsored Products - Outdoor Living,AMZ-005,208.40,33400,698,1258.40,26,12,428.40
+2026-03-06,Sponsored Products - Kitchen Essentials,AMZ-001,360.20,56000,912,2148.60,45,17,718.40
+2026-03-06,Sponsored Display - Home & Garden,AMZ-002,240.60,77800,468,1068.80,21,9,344.80
+2026-03-06,Sponsored Brands - Premium Cookware,AMZ-003,518.40,36800,1348,3568.40,75,28,1168.80
+2026-03-06,DSP Retargeting - Lifestyle,AMZ-004,308.40,240000,432,1548.40,31,11,474.80
+2026-03-06,Sponsored Products - Outdoor Living,AMZ-005,220.40,35400,722,1312.80,28,13,452.40
+2026-03-07,Sponsored Products - Kitchen Essentials,AMZ-001,378.60,59200,952,2248.80,47,18,752.80
+2026-03-07,Sponsored Display - Home & Garden,AMZ-002,252.80,80800,488,1128.40,22,9,364.40
+2026-03-07,Sponsored Brands - Premium Cookware,AMZ-003,542.20,38400,1402,3748.40,79,30,1228.80
+2026-03-07,DSP Retargeting - Lifestyle,AMZ-004,322.80,248000,448,1618.80,32,11,494.40
+2026-03-07,Sponsored Products - Outdoor Living,AMZ-005,232.60,37200,758,1378.40,29,13,472.40
+2026-03-08,Sponsored Products - Kitchen Essentials,AMZ-001,396.40,61800,992,2348.80,49,19,782.40
+2026-03-08,Sponsored Display - Home & Garden,AMZ-002,265.20,84200,508,1178.80,23,10,380.40
+2026-03-08,Sponsored Brands - Premium Cookware,AMZ-003,562.80,39800,1452,3868.80,81,31,1252.80
+2026-03-08,DSP Retargeting - Lifestyle,AMZ-004,336.40,254000,460,1688.40,33,12,512.40
+2026-03-08,Sponsored Products - Outdoor Living,AMZ-005,244.80,38800,792,1438.80,30,14,488.80
+2026-03-09,Sponsored Products - Kitchen Essentials,AMZ-001,415.20,64600,1038,2452.40,51,20,818.40
+2026-03-09,Sponsored Display - Home & Garden,AMZ-002,278.40,87200,528,1228.40,25,10,396.40
+2026-03-09,Sponsored Brands - Premium Cookware,AMZ-003,585.40,41400,1502,4008.80,84,32,1302.40
+2026-03-09,DSP Retargeting - Lifestyle,AMZ-004,350.40,260000,475,1758.40,35,13,538.40
+2026-03-09,Sponsored Products - Outdoor Living,AMZ-005,256.40,40400,822,1498.40,31,15,512.40
+2026-03-10,Sponsored Products - Kitchen Essentials,AMZ-001,432.80,67200,1072,2558.40,53,21,852.40
+2026-03-10,Sponsored Display - Home & Garden,AMZ-002,290.40,90000,545,1278.40,26,11,412.40
+2026-03-10,Sponsored Brands - Premium Cookware,AMZ-003,608.40,43000,1558,4168.80,87,33,1348.40
+2026-03-10,DSP Retargeting - Lifestyle,AMZ-004,364.80,266000,490,1828.40,36,13,558.40
+2026-03-10,Sponsored Products - Outdoor Living,AMZ-005,268.60,42000,852,1558.40,32,15,532.40
+2026-03-11,Sponsored Products - Kitchen Essentials,AMZ-001,348.60,54400,892,2098.40,44,17,712.40
+2026-03-11,Sponsored Display - Home & Garden,AMZ-002,234.40,76400,462,1038.40,21,8,334.80
+2026-03-11,Sponsored Brands - Premium Cookware,AMZ-003,505.60,36000,1318,3528.40,74,28,1152.80
+2026-03-11,DSP Retargeting - Lifestyle,AMZ-004,302.60,238000,426,1528.40,31,11,472.40
+2026-03-11,Sponsored Products - Outdoor Living,AMZ-005,212.80,34200,712,1282.40,27,12,438.80
+2026-03-12,Sponsored Products - Kitchen Essentials,AMZ-001,366.80,57200,932,2198.40,46,18,748.40
+2026-03-12,Sponsored Display - Home & Garden,AMZ-002,246.60,79200,482,1108.40,22,9,358.40
+2026-03-12,Sponsored Brands - Premium Cookware,AMZ-003,528.80,37600,1372,3668.40,77,29,1198.80
+2026-03-12,DSP Retargeting - Lifestyle,AMZ-004,316.40,246000,444,1588.40,32,11,488.80
+2026-03-12,Sponsored Products - Outdoor Living,AMZ-005,225.60,36200,738,1342.40,28,13,458.40
+2026-03-13,Sponsored Products - Kitchen Essentials,AMZ-001,385.40,60200,972,2302.40,48,18,768.40
+2026-03-13,Sponsored Display - Home & Garden,AMZ-002,258.80,82000,502,1148.40,23,9,374.40
+2026-03-13,Sponsored Brands - Premium Cookware,AMZ-003,552.60,39200,1428,3808.40,80,30,1238.80
+2026-03-13,DSP Retargeting - Lifestyle,AMZ-004,330.40,252000,460,1658.40,33,12,508.40
+2026-03-13,Sponsored Products - Outdoor Living,AMZ-005,238.40,38200,768,1398.40,29,14,478.40
