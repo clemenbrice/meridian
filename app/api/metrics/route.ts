@@ -56,6 +56,7 @@ export async function GET(req: NextRequest) {
 
     const kpiChanges = {
       spendChange: pctChange(currentKPIs.totalSpend, priorKPIs.totalSpend),
+      revenueChange: pctChange(currentKPIs.totalRevenue, priorKPIs.totalRevenue),
       roasChange: pctChange(currentKPIs.blendedROAS, priorKPIs.blendedROAS),
       ordersChange: pctChange(currentKPIs.totalOrders, priorKPIs.totalOrders),
       ntbRateChange: pctChange(currentKPIs.ntbRate, priorKPIs.ntbRate),
@@ -63,6 +64,7 @@ export async function GET(req: NextRequest) {
       cpcChange: currentKPIs.cpc !== null && priorKPIs.cpc !== null
         ? pctChange(currentKPIs.cpc, priorKPIs.cpc)
         : null,
+      impressionsChange: pctChange(currentKPIs.totalImpressions, priorKPIs.totalImpressions),
     };
 
     return NextResponse.json({

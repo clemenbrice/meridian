@@ -35,11 +35,11 @@ export function ROASByNetworkChart({ data }: { data: NetworkAggregate[] }) {
   );
 }
 
-// ── Spend vs Revenue trend (line) ────────────────────────────────────────────
+// ── Spend vs Revenue trend with Orders on secondary axis ─────────────────────
 export function SpendRevenueTrendChart({ data }: { data: DailyAggregate[] }) {
   return (
     <ResponsiveContainer width="100%" height={260}>
-      <LineChart data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+      <LineChart data={data} margin={{ top: 5, right: 45, bottom: 5, left: 0 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
         <XAxis
           dataKey="date"
@@ -47,16 +47,28 @@ export function SpendRevenueTrendChart({ data }: { data: DailyAggregate[] }) {
           tickFormatter={v => v.slice(5)} // MM-DD
           interval="preserveStartEnd"
         />
-        <YAxis tickFormatter={fmtK} tick={{ fontSize: 11 }} />
-        <Tooltip formatter={(v) => fmt$(Number(v))} labelStyle={{ fontWeight: 600 }} />
+        <YAxis yAxisId="left" tickFormatter={fmtK} tick={{ fontSize: 11 }} />
+        <YAxis yAxisId="right" orientation="right" tickFormatter={v => Number(v).toLocaleString()} tick={{ fontSize: 11 }} />
+        <Tooltip
+          formatter={(v, name) =>
+            name === 'Orders'
+              ? [Number(v).toLocaleString(), name]
+              : [fmt$(Number(v)), name]
+          }
+          labelStyle={{ fontWeight: 600 }}
+        />
         <Legend />
         <Line
-          type="monotone" dataKey="spend" name="Spend"
+          yAxisId="left" type="monotone" dataKey="spend" name="Spend"
           stroke="#6366f1" strokeWidth={2} dot={false}
         />
         <Line
-          type="monotone" dataKey="revenue" name="Revenue"
+          yAxisId="left" type="monotone" dataKey="revenue" name="Revenue"
           stroke="#10b981" strokeWidth={2} dot={false}
+        />
+        <Line
+          yAxisId="right" type="monotone" dataKey="orders" name="Orders"
+          stroke="#f59e0b" strokeWidth={2} dot={false} strokeDasharray="4 2"
         />
       </LineChart>
     </ResponsiveContainer>

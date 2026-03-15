@@ -15,11 +15,13 @@ interface MetricsResponse {
   kpis: KPIs;
   kpiChanges: {
     spendChange: number | null;
+    revenueChange: number | null;
     roasChange: number | null;
     ordersChange: number | null;
     ntbRateChange: number | null;
     ctrChange: number | null;
     cpcChange: number | null;
+    impressionsChange: number | null;
   };
   byNetwork: NetworkAggregate[];
   byDay: DailyAggregate[];
@@ -28,11 +30,29 @@ interface MetricsResponse {
   availableNetworks: string[];
 }
 
+const NETWORK_COLORS: Record<string, string> = {
+  amazon: '#f97316',
+  walmart: '#3b82f6',
+  criteo: '#10b981',
+};
+
+const NETWORK_BG: Record<string, string> = {
+  amazon: 'bg-orange-100 text-orange-700',
+  walmart: 'bg-blue-100 text-blue-700',
+  criteo: 'bg-green-100 text-green-700',
+};
+
 const fmt$ = (v: number) =>
   new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(v);
 
 const fmtCPC = (v: number) =>
   new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v);
+
+function fmtImpressions(n: number): string {
+  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
+  if (n >= 1_000) return `${(n / 1_000).toFixed(1)}K`;
+  return n.toString();
+}
 
 const RANGES: { label: string; value: Range }[] = [
   { label: 'Last 7 days', value: '7d' },
@@ -65,6 +85,7 @@ export default function DashboardPage() {
   const [range, setRange] = useState<Range>('30d');
   const [customStart, setCustomStart] = useState('');
   const [customEnd, setCustomEnd] = useState('');
+  const [selectedNetworks, setSelectedNetworks] = useState<string[]>([]);
   const [data, setData] = useState<MetricsResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -77,6 +98,9 @@ export default function DashboardPage() {
       if (range === 'custom' && customStart && customEnd) {
         url += `&start=${customStart}&end=${customEnd}`;
       }
+      if (selectedNetworks.length > 0) {
+        url += `&networks=${selectedNetworks.join(',')}`;
+      }
       const res = await fetch(url);
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? 'Failed to load');
@@ -86,7 +110,7 @@ export default function DashboardPage() {
     } finally {
       setLoading(false);
     }
-  }, [range, customStart, customEnd]);
+  }, [range, customStart, customEnd, selectedNetworks]);
 
   useEffect(() => {
     if (range !== 'custom' || (customStart && customEnd)) {
@@ -94,10 +118,19 @@ export default function DashboardPage() {
     }
   }, [load, range, customStart, customEnd]);
 
+  function toggleNetwork(n: string) {
+    setSelectedNetworks(prev =>
+      prev.includes(n) ? prev.filter(x => x !== n) : [...prev, n]
+    );
+  }
+
+  // Network spend breakdown helpers
+  const totalSpendAllNetworks = data?.byNetwork.reduce((s, n) => s + n.spend, 0) ?? 0;
+
   return (
     <div>
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
           {data && (
@@ -108,22 +141,24 @@ export default function DashboardPage() {
         </div>
 
         {/* Range picker */}
-        <div className="flex items-center gap-2 flex-wrap">
-          {RANGES.map(r => (
-            <button
-              key={r.value}
-              onClick={() => setRange(r.value)}
-              className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
-                range === r.value
-                  ? 'bg-indigo-600 text-white'
-                  : 'bg-white border border-gray-200 text-gray-600 hover:border-indigo-300'
-              }`}
-            >
-              {r.label}
-            </button>
-          ))}
+        <div className="flex flex-col gap-2 items-end">
+          <div className="flex items-center gap-2 flex-wrap justify-end">
+            {RANGES.map(r => (
+              <button
+                key={r.value}
+                onClick={() => setRange(r.value)}
+                className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
+                  range === r.value
+                    ? 'bg-indigo-600 text-white'
+                    : 'bg-white border border-gray-200 text-gray-600 hover:border-indigo-300'
+                }`}
+              >
+                {r.label}
+              </button>
+            ))}
+          </div>
           {range === 'custom' && (
-            <>
+            <div className="flex items-center gap-2">
               <input
                 type="date"
                 value={customStart}
@@ -137,7 +172,37 @@ export default function DashboardPage() {
                 onChange={e => setCustomEnd(e.target.value)}
                 className="text-xs border border-gray-200 rounded-lg px-2 py-1.5 text-gray-700"
               />
-            </>
+            </div>
+          )}
+
+          {/* Network filter */}
+          {data && data.availableNetworks.length > 0 && (
+            <div className="flex items-center gap-1.5 flex-wrap justify-end">
+              <span className="text-xs text-gray-400 mr-1">Network:</span>
+              <button
+                onClick={() => setSelectedNetworks([])}
+                className={`px-2.5 py-1 text-xs font-medium rounded-full transition-colors ${
+                  selectedNetworks.length === 0
+                    ? 'bg-gray-800 text-white'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                All
+              </button>
+              {data.availableNetworks.map(n => (
+                <button
+                  key={n}
+                  onClick={() => toggleNetwork(n)}
+                  className={`px-2.5 py-1 text-xs font-medium rounded-full capitalize transition-colors ${
+                    selectedNetworks.includes(n)
+                      ? (NETWORK_BG[n] ?? 'bg-indigo-100 text-indigo-700')
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  }`}
+                >
+                  {n}
+                </button>
+              ))}
+            </div>
           )}
         </div>
       </div>
@@ -148,8 +213,8 @@ export default function DashboardPage() {
 
       {loading && !data && (
         <div className="space-y-6">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[...Array(6)].map((_, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[...Array(8)].map((_, i) => (
               <div key={i} className="h-28 bg-gray-100 rounded-xl animate-pulse" />
             ))}
           </div>
@@ -163,12 +228,17 @@ export default function DashboardPage() {
 
       {data && (
         <div className="space-y-6">
-          {/* KPI cards — 6 cards in a 2/3/6 responsive grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {/* KPI cards — 8 cards in 2/4 responsive grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <KPICard
               title="Total Spend"
               value={fmt$(data.kpis.totalSpend)}
               change={data.kpiChanges.spendChange}
+            />
+            <KPICard
+              title="Total Revenue"
+              value={fmt$(data.kpis.totalRevenue)}
+              change={data.kpiChanges.revenueChange}
             />
             <KPICard
               title="Blended ROAS"
@@ -197,10 +267,60 @@ export default function DashboardPage() {
               change={data.kpiChanges.cpcChange}
               invertChange
             />
+            <KPICard
+              title="Total Impressions"
+              value={fmtImpressions(data.kpis.totalImpressions)}
+              change={data.kpiChanges.impressionsChange}
+            />
           </div>
 
           {/* AI Insight */}
           <InsightCard dateRange={{ start: data.dateRange.start, end: data.dateRange.end }} />
+
+          {/* Network spend breakdown */}
+          {data.byNetwork.length > 0 && totalSpendAllNetworks > 0 && (
+            <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+              <h3 className="text-sm font-semibold text-gray-800 mb-4">Spend by Network</h3>
+              {/* Stacked bar */}
+              <div className="flex h-4 rounded-full overflow-hidden mb-4">
+                {data.byNetwork.map(n => (
+                  <div
+                    key={n.network}
+                    style={{
+                      width: `${(n.spend / totalSpendAllNetworks) * 100}%`,
+                      backgroundColor: NETWORK_COLORS[n.network] ?? '#6366f1',
+                    }}
+                    title={`${n.network}: ${((n.spend / totalSpendAllNetworks) * 100).toFixed(1)}%`}
+                  />
+                ))}
+              </div>
+              {/* Mini stat blocks */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {data.byNetwork.map(n => (
+                  <div key={n.network} className="flex items-center gap-3 p-3 rounded-lg bg-gray-50">
+                    <div
+                      className="w-2.5 h-2.5 rounded-full shrink-0"
+                      style={{ backgroundColor: NETWORK_COLORS[n.network] ?? '#6366f1' }}
+                    />
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className={`text-xs font-semibold capitalize px-1.5 py-0.5 rounded-full ${NETWORK_BG[n.network] ?? 'bg-gray-100 text-gray-600'}`}>
+                          {n.network}
+                        </span>
+                        <span className="text-xs text-gray-400">
+                          {((n.spend / totalSpendAllNetworks) * 100).toFixed(1)}%
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between mt-1.5">
+                        <span className="text-sm font-bold text-gray-900 tabular-nums">{fmt$(n.spend)}</span>
+                        <span className="text-xs text-indigo-600 font-medium tabular-nums">{n.roas.toFixed(2)}x ROAS</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Charts row */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -222,13 +342,13 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* Amazon Purchase Funnel (shown only when DPV data is available) */}
-          {data.funnelData && (
-            <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
-              <div className="flex items-center gap-2 mb-5">
-                <h3 className="text-sm font-semibold text-gray-800">Amazon Purchase Funnel</h3>
-                <span className="text-xs px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 font-medium">14d attribution</span>
-              </div>
+          {/* Amazon Purchase Funnel */}
+          <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+            <div className="flex items-center gap-2 mb-5">
+              <h3 className="text-sm font-semibold text-gray-800">Amazon Purchase Funnel</h3>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 font-medium">14d attribution</span>
+            </div>
+            {data.funnelData ? (
               <div className="flex items-center gap-1">
                 {(() => {
                   const f = data.funnelData!;
@@ -254,8 +374,13 @@ export default function DashboardPage() {
                   ));
                 })()}
               </div>
-            </div>
-          )}
+            ) : (
+              <div className="flex flex-col items-center justify-center py-8 text-center">
+                <p className="text-sm text-gray-400">Upload Amazon DSP data to see purchase funnel</p>
+                <p className="text-xs text-gray-300 mt-1">Requires Detail Page Views column in your Amazon CSV</p>
+              </div>
+            )}
+          </div>
 
           {/* NTB + Campaign table */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -268,7 +393,7 @@ export default function DashboardPage() {
               )}
             </div>
             <div className="lg:col-span-2 bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
-              <h3 className="text-sm font-semibold text-gray-800 mb-4">Top 10 Campaigns by ROAS</h3>
+              <h3 className="text-sm font-semibold text-gray-800 mb-4">Campaigns by ROAS</h3>
               <CampaignTable campaigns={data.topCampaigns} />
             </div>
           </div>

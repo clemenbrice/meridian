@@ -34,6 +34,7 @@ export interface DailyAggregate {
   date: string;
   spend: number;
   revenue: number;
+  orders: number;
 }
 
 export interface CampaignAggregate {
@@ -126,9 +127,10 @@ export function aggregateByDay(rows: MetricsRow[]): DailyAggregate[] {
   const map = new Map<string, DailyAggregate>();
 
   for (const r of rows) {
-    const existing = map.get(r.date) ?? { date: r.date, spend: 0, revenue: 0 };
+    const existing = map.get(r.date) ?? { date: r.date, spend: 0, revenue: 0, orders: 0 };
     existing.spend += r.ad_spend;
     existing.revenue += r.attributed_revenue;
+    existing.orders += r.attributed_orders;
     map.set(r.date, existing);
   }
 
@@ -172,8 +174,7 @@ export function aggregateByCampaign(rows: MetricsRow[]): CampaignAggregate[] {
       ctr: c.impressions > 0 ? c.clicks / c.impressions : 0,
       cpc: c.clicks > 0 ? c.spend / c.clicks : null,
     }))
-    .sort((a, b) => b.roas - a.roas)
-    .slice(0, 10);
+    .sort((a, b) => b.roas - a.roas);
 }
 
 export function pctChange(current: number, prior: number): number | null {
