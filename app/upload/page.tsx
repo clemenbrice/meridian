@@ -227,15 +227,15 @@ export default function UploadPage() {
         {[
           {
             label: 'Amazon DSP',
-            cols: 'Date, Campaign Name, Campaign ID, Total Spend ($), Impressions, Clicks, Attributed Sales (14d), Attributed Orders (14d), New-to-Brand Orders, New-to-Brand Sales',
+            cols: 'Date, Campaign Name, Campaign ID, Total Spend ($), Impressions, Clicks, Attributed Sales (14d), Attributed Orders (14d), New-to-Brand Orders, New-to-Brand Sales, Detail Page Views, Add to Cart, Campaign Type, Placement',
           },
           {
             label: 'Walmart Connect',
-            cols: 'report_date, campaign, campaign_id, spend, total_impressions, total_clicks, attributed_revenue_14d, attributed_units_14d, new_buyer_orders, new_buyer_revenue',
+            cols: 'report_date, campaign, campaign_id, spend, total_impressions, total_clicks, attributed_revenue_14d, attributed_units_14d, new_buyer_orders, new_buyer_revenue, Ad Type, Placement',
           },
           {
             label: 'Criteo',
-            cols: 'Day, CampaignName, CampaignId, Cost, Displays, Clicks, Revenue, Orders, NewCustomerOrders, NewCustomerRevenue',
+            cols: 'Day, CampaignName, CampaignId, Cost, Displays, Clicks, Revenue, Orders, NewCustomerOrders, NewCustomerRevenue, Creative Format, Placement Type',
           },
         ].map(({ label, cols }) => (
           <div key={label} className="bg-white rounded-lg border border-gray-200 p-4">
