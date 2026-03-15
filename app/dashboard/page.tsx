@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, X } from 'lucide-react';
 import KPICard from '@/components/KPICard';
 import { ROASByNetworkChart, SpendRevenueTrendChart, NTBDonutChart } from '@/components/NetworkChart';
 import CampaignTable from '@/components/CampaignTable';
@@ -86,6 +86,7 @@ export default function DashboardPage() {
   const [customStart, setCustomStart] = useState('');
   const [customEnd, setCustomEnd] = useState('');
   const [selectedNetworks, setSelectedNetworks] = useState<string[]>([]);
+  const [campaignSearch, setCampaignSearch] = useState('');
   const [data, setData] = useState<MetricsResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -127,10 +128,12 @@ export default function DashboardPage() {
   // Network spend breakdown helpers
   const totalSpendAllNetworks = data?.byNetwork.reduce((s, n) => s + n.spend, 0) ?? 0;
 
+  const KNOWN_NETWORKS = ['amazon', 'walmart', 'criteo'];
+
   return (
     <div>
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+      {/* Header row */}
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
           {data && (
@@ -140,7 +143,7 @@ export default function DashboardPage() {
           )}
         </div>
 
-        {/* Range picker */}
+        {/* Date range picker */}
         <div className="flex flex-col gap-2 items-end">
           <div className="flex items-center gap-2 flex-wrap justify-end">
             {RANGES.map(r => (
@@ -174,36 +177,63 @@ export default function DashboardPage() {
               />
             </div>
           )}
+        </div>
+      </div>
 
-          {/* Network filter */}
-          {data && data.availableNetworks.length > 0 && (
-            <div className="flex items-center gap-1.5 flex-wrap justify-end">
-              <span className="text-xs text-gray-400 mr-1">Network:</span>
+      {/* Filter bar — always visible */}
+      <div className="bg-white rounded-xl border border-gray-200 px-4 py-3 mb-6 flex flex-wrap items-center gap-4 shadow-sm">
+        {/* Channel filter */}
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">Channel</span>
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => setSelectedNetworks([])}
+              className={`px-3 py-1 text-xs font-medium rounded-full transition-colors ${
+                selectedNetworks.length === 0
+                  ? 'bg-gray-800 text-white'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+            >
+              All
+            </button>
+            {KNOWN_NETWORKS.map(n => (
               <button
-                onClick={() => setSelectedNetworks([])}
-                className={`px-2.5 py-1 text-xs font-medium rounded-full transition-colors ${
-                  selectedNetworks.length === 0
-                    ? 'bg-gray-800 text-white'
+                key={n}
+                onClick={() => toggleNetwork(n)}
+                className={`px-3 py-1 text-xs font-medium rounded-full capitalize transition-colors ${
+                  selectedNetworks.includes(n)
+                    ? (NETWORK_BG[n] ?? 'bg-indigo-100 text-indigo-700')
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
-                All
+                {n}
               </button>
-              {data.availableNetworks.map(n => (
-                <button
-                  key={n}
-                  onClick={() => toggleNetwork(n)}
-                  className={`px-2.5 py-1 text-xs font-medium rounded-full capitalize transition-colors ${
-                    selectedNetworks.includes(n)
-                      ? (NETWORK_BG[n] ?? 'bg-indigo-100 text-indigo-700')
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                  }`}
-                >
-                  {n}
-                </button>
-              ))}
-            </div>
-          )}
+            ))}
+          </div>
+        </div>
+
+        <div className="w-px h-5 bg-gray-200 hidden sm:block" />
+
+        {/* Campaign search */}
+        <div className="flex items-center gap-2 flex-1 min-w-[180px]">
+          <span className="text-xs font-medium text-gray-500 uppercase tracking-wide whitespace-nowrap">Campaign</span>
+          <div className="relative flex-1">
+            <input
+              type="text"
+              placeholder="Search campaigns…"
+              value={campaignSearch}
+              onChange={e => setCampaignSearch(e.target.value)}
+              className="w-full text-xs border border-gray-200 rounded-lg px-3 py-1.5 pr-7 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-300"
+            />
+            {campaignSearch && (
+              <button
+                onClick={() => setCampaignSearch('')}
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              >
+                <X className="w-3 h-3" />
+              </button>
+            )}
+          </div>
         </div>
       </div>
 
@@ -394,7 +424,7 @@ export default function DashboardPage() {
             </div>
             <div className="lg:col-span-2 bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
               <h3 className="text-sm font-semibold text-gray-800 mb-4">Campaigns by ROAS</h3>
-              <CampaignTable campaigns={data.topCampaigns} />
+              <CampaignTable campaigns={data.topCampaigns} externalSearch={campaignSearch} />
             </div>
           </div>
         </div>

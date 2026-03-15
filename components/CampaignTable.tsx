@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import { ChevronUp, ChevronDown, X } from 'lucide-react';
 import { CampaignAggregate } from '@/lib/calculations';
 
-interface Props { campaigns: CampaignAggregate[] }
+interface Props { campaigns: CampaignAggregate[]; externalSearch?: string }
 
 const fmt$ = (v: number) =>
   new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(v);
@@ -15,7 +15,7 @@ const NETWORK_BADGE: Record<string, string> = {
   criteo: 'bg-green-100 text-green-700',
 };
 
-export default function CampaignTable({ campaigns }: Props) {
+export default function CampaignTable({ campaigns, externalSearch }: Props) {
   const [search, setSearch] = useState('');
   const [networkFilter, setNetworkFilter] = useState('');
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc');
@@ -28,12 +28,13 @@ export default function CampaignTable({ campaigns }: Props) {
   const filtered = useMemo(() => {
     return campaigns
       .filter(c => {
-        const matchSearch = !search || c.campaign_name.toLowerCase().includes(search.toLowerCase());
+        const activeSearch = externalSearch ?? search;
+        const matchSearch = !activeSearch || c.campaign_name.toLowerCase().includes(activeSearch.toLowerCase());
         const matchNetwork = !networkFilter || c.network === networkFilter;
         return matchSearch && matchNetwork;
       })
       .sort((a, b) => sortDir === 'desc' ? b.roas - a.roas : a.roas - b.roas);
-  }, [campaigns, search, networkFilter, sortDir]);
+  }, [campaigns, search, externalSearch, networkFilter, sortDir]);
 
   if (campaigns.length === 0) {
     return <p className="text-sm text-gray-400 py-4 text-center">No campaign data available.</p>;
