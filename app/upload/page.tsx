@@ -1,12 +1,13 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { Upload, CheckCircle, AlertCircle, FileText, X } from 'lucide-react';
+import { Upload, CheckCircle, AlertCircle, FileText, FileSpreadsheet, FileType, X } from 'lucide-react';
 
 type Network = 'amazon' | 'walmart' | 'criteo';
 
 interface UploadResult {
   success: boolean;
+  fileType?: string;
   rowsProcessed?: number;
   rowsInserted?: number;
   rowsSkipped?: number;
@@ -19,6 +20,28 @@ const NETWORK_COLORS: Record<Network, string> = {
   criteo: 'border-green-300 bg-green-50 text-green-700',
 };
 
+const ACCEPTED = '.csv,.xlsx,.xls,.xlsm,.ods,.pdf';
+const ACCEPTED_EXTS = new Set(['csv', 'xlsx', 'xls', 'xlsm', 'ods', 'pdf']);
+
+function fileExt(name: string) {
+  return name.slice(name.lastIndexOf('.') + 1).toLowerCase();
+}
+
+function FileIcon({ name, className }: { name: string; className?: string }) {
+  const ext = fileExt(name);
+  if (['xlsx', 'xls', 'xlsm', 'ods'].includes(ext))
+    return <FileSpreadsheet className={className} />;
+  if (ext === 'pdf') return <FileType className={className} />;
+  return <FileText className={className} />;
+}
+
+function fileBadgeColor(name: string) {
+  const ext = fileExt(name);
+  if (['xlsx', 'xls', 'xlsm', 'ods'].includes(ext)) return 'bg-emerald-100 text-emerald-700';
+  if (ext === 'pdf') return 'bg-red-100 text-red-700';
+  return 'bg-indigo-100 text-indigo-700';
+}
+
 export default function UploadPage() {
   const [network, setNetwork] = useState<Network>('amazon');
   const [file, setFile] = useState<File | null>(null);
@@ -28,8 +51,12 @@ export default function UploadPage() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   function handleFile(f: File) {
-    if (!f.name.endsWith('.csv')) {
-      setResult({ success: false, error: 'Only CSV files are supported.' });
+    const ext = fileExt(f.name);
+    if (!ACCEPTED_EXTS.has(ext)) {
+      setResult({
+        success: false,
+        error: `"${f.name}" is not supported. Please upload a CSV, Excel (.xlsx / .xls), or PDF file.`,
+      });
       return;
     }
     setFile(f);
@@ -67,9 +94,24 @@ export default function UploadPage() {
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-gray-900">Upload Campaign Data</h1>
         <p className="mt-1 text-sm text-gray-500">
-          Import CSV exports from Amazon DSP, Walmart Connect, or Criteo.
-          Duplicate rows (same date + campaign + network) are automatically skipped.
+          Import exports from Amazon DSP, Walmart Connect, or Criteo.
+          Supported formats: CSV, Excel, PDF. Duplicate rows are automatically skipped.
         </p>
+      </div>
+
+      {/* Accepted format badges */}
+      <div className="flex items-center gap-2 mb-6">
+        <span className="text-xs text-gray-400 font-medium">Accepted:</span>
+        {[
+          { label: 'CSV', color: 'bg-indigo-100 text-indigo-700' },
+          { label: 'XLSX', color: 'bg-emerald-100 text-emerald-700' },
+          { label: 'XLS', color: 'bg-emerald-100 text-emerald-700' },
+          { label: 'PDF', color: 'bg-red-100 text-red-700' },
+        ].map(b => (
+          <span key={b.label} className={`text-xs font-semibold px-2 py-0.5 rounded ${b.color}`}>
+            {b.label}
+          </span>
+        ))}
       </div>
 
       {/* Network selector */}
@@ -109,17 +151,23 @@ export default function UploadPage() {
         <input
           ref={inputRef}
           type="file"
-          accept=".csv"
+          accept={ACCEPTED}
           className="hidden"
           onChange={e => e.target.files?.[0] && handleFile(e.target.files[0])}
         />
         {file ? (
           <div className="flex items-center justify-center gap-3">
-            <FileText className="w-6 h-6 text-indigo-500" />
-            <span className="text-sm font-medium text-gray-800">{file.name}</span>
+            <FileIcon name={file.name} className="w-6 h-6 text-indigo-500" />
+            <div className="text-left">
+              <p className="text-sm font-medium text-gray-800">{file.name}</p>
+              <p className="text-xs text-gray-400">{(file.size / 1024).toFixed(1)} KB</p>
+            </div>
+            <span className={`text-xs font-bold px-2 py-0.5 rounded uppercase ${fileBadgeColor(file.name)}`}>
+              {fileExt(file.name)}
+            </span>
             <button
               onClick={e => { e.stopPropagation(); setFile(null); setResult(null); }}
-              className="text-gray-400 hover:text-gray-600"
+              className="text-gray-400 hover:text-gray-600 ml-1"
             >
               <X className="w-4 h-4" />
             </button>
@@ -127,8 +175,8 @@ export default function UploadPage() {
         ) : (
           <>
             <Upload className="w-8 h-8 text-gray-400 mx-auto mb-3" />
-            <p className="text-sm font-medium text-gray-700">Drop your CSV here or click to browse</p>
-            <p className="text-xs text-gray-400 mt-1">Only .csv files are accepted</p>
+            <p className="text-sm font-medium text-gray-700">Drop your file here or click to browse</p>
+            <p className="text-xs text-gray-400 mt-1">CSV · Excel (.xlsx, .xls) · PDF</p>
           </>
         )}
       </div>
@@ -139,7 +187,7 @@ export default function UploadPage() {
         disabled={!file || uploading}
         className="mt-4 w-full py-3 px-4 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
       >
-        {uploading ? 'Uploading…' : 'Upload & Ingest'}
+        {uploading ? 'Processing…' : 'Upload & Ingest'}
       </button>
 
       {/* Result */}
@@ -155,7 +203,9 @@ export default function UploadPage() {
           <div>
             {result.success ? (
               <>
-                <p className="text-sm font-semibold text-emerald-800">Upload successful!</p>
+                <p className="text-sm font-semibold text-emerald-800">
+                  Upload successful!{result.fileType ? ` (${result.fileType})` : ''}
+                </p>
                 <p className="text-xs text-emerald-700 mt-0.5">
                   {result.rowsInserted} rows inserted, {result.rowsSkipped} skipped as duplicates
                   (out of {result.rowsProcessed} total rows processed)
@@ -171,6 +221,9 @@ export default function UploadPage() {
       {/* Format reference */}
       <div className="mt-8 space-y-4">
         <h2 className="text-sm font-semibold text-gray-700">Expected column formats</h2>
+        <p className="text-xs text-gray-400">
+          These column names are auto-detected regardless of whether you upload CSV, Excel, or PDF.
+        </p>
         {[
           {
             label: 'Amazon DSP',
