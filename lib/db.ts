@@ -3,7 +3,6 @@ import path from 'path';
 import fs from 'fs';
 
 // DATA_DIR can be overridden via env var to point at a Railway persistent volume
-// e.g. set DATA_DIR=/data in Railway and mount a volume at /data
 const DB_DIR = process.env.DATA_DIR ?? path.join(process.cwd(), 'data');
 const DB_PATH = path.join(DB_DIR, 'meridian.db');
 
@@ -21,6 +20,7 @@ export function getDb(): Database.Database {
   db.pragma('foreign_keys = ON');
 
   initSchema(db);
+  runMigrations(db);
   return db;
 }
 
@@ -47,7 +47,16 @@ function initSchema(db: Database.Database) {
       attributed_revenue REAL NOT NULL DEFAULT 0,
       attributed_orders INTEGER NOT NULL DEFAULT 0,
       new_to_brand_orders INTEGER NOT NULL DEFAULT 0,
-      new_to_brand_revenue REAL NOT NULL DEFAULT 0
+      new_to_brand_revenue REAL NOT NULL DEFAULT 0,
+      ctr REAL,
+      cpc REAL,
+      roas REAL,
+      ntb_rate REAL,
+      detail_page_views INTEGER,
+      add_to_cart INTEGER,
+      campaign_type TEXT,
+      placement TEXT,
+      attributed_window TEXT
     );
 
     CREATE UNIQUE INDEX IF NOT EXISTS idx_daily_metrics_unique
@@ -63,7 +72,39 @@ function initSchema(db: Database.Database) {
   `);
 }
 
-// ── Query helpers ──────────────────────────────────────────────────────────────
+// Add new columns to existing databases without dropping data
+function runMigrations(db: Database.Database) {
+  const existingCols = new Set(
+    (db.prepare("SELECT name FROM pragma_table_info('daily_metrics')").all() as { name: string }[])
+      .map(r => r.name)
+  );
+
+  const newCols: [string, string][] = [
+    ['ctr', 'REAL'],
+    ['cpc', 'REAL'],
+    ['roas', 'REAL'],
+    ['ntb_rate', 'REAL'],
+    ['detail_page_views', 'INTEGER'],
+    ['add_to_cart', 'INTEGER'],
+    ['campaign_type', 'TEXT'],
+    ['placement', 'TEXT'],
+    ['attributed_window', 'TEXT'],
+  ];
+
+  let added = 0;
+  for (const [col, type] of newCols) {
+    if (!existingCols.has(col)) {
+      db.exec(`ALTER TABLE daily_metrics ADD COLUMN ${col} ${type}`);
+      added++;
+    }
+  }
+
+  if (added > 0) {
+    console.log(`[db] Migration: added ${added} new column(s) to daily_metrics`);
+  }
+}
+
+// ── Types ──────────────────────────────────────────────────────────────────────
 
 export interface MetricsRow {
   network: string;
@@ -76,7 +117,40 @@ export interface MetricsRow {
   attributed_orders: number;
   new_to_brand_orders: number;
   new_to_brand_revenue: number;
+  ctr: number | null;
+  cpc: number | null;
+  roas: number | null;
+  ntb_rate: number | null;
+  detail_page_views: number | null;
+  add_to_cart: number | null;
+  campaign_type: string | null;
+  placement: string | null;
+  attributed_window: string | null;
 }
+
+export interface NormalizedRow {
+  campaign_name: string;
+  campaign_id?: string;
+  date: string;
+  ad_spend: number;
+  impressions: number;
+  clicks: number;
+  attributed_revenue: number;
+  attributed_orders: number;
+  new_to_brand_orders: number;
+  new_to_brand_revenue: number;
+  ctr: number | null;
+  cpc: number | null;
+  roas: number | null;
+  ntb_rate: number | null;
+  detail_page_views: number | null;
+  add_to_cart: number | null;
+  campaign_type: string | null;
+  placement: string | null;
+  attributed_window: string | null;
+}
+
+// ── Query helpers ──────────────────────────────────────────────────────────────
 
 export function queryMetrics(startDate: string, endDate: string, networks?: string[]): MetricsRow[] {
   const db = getDb();
@@ -98,7 +172,16 @@ export function queryMetrics(startDate: string, endDate: string, networks?: stri
       m.attributed_revenue,
       m.attributed_orders,
       m.new_to_brand_orders,
-      m.new_to_brand_revenue
+      m.new_to_brand_revenue,
+      m.ctr,
+      m.cpc,
+      m.roas,
+      m.ntb_rate,
+      m.detail_page_views,
+      m.add_to_cart,
+      m.campaign_type,
+      m.placement,
+      m.attributed_window
     FROM daily_metrics m
     JOIN campaigns c ON c.id = m.campaign_id
     WHERE m.date >= ? AND m.date <= ?
@@ -121,19 +204,6 @@ export function upsertCampaign(network: string, campaign_name: string, campaign_
   return row.id;
 }
 
-export interface NormalizedRow {
-  campaign_name: string;
-  campaign_id?: string;
-  date: string;
-  ad_spend: number;
-  impressions: number;
-  clicks: number;
-  attributed_revenue: number;
-  attributed_orders: number;
-  new_to_brand_orders: number;
-  new_to_brand_revenue: number;
-}
-
 export function insertMetrics(network: string, rows: NormalizedRow[]): number {
   const db = getDb();
   let inserted = 0;
@@ -141,8 +211,10 @@ export function insertMetrics(network: string, rows: NormalizedRow[]): number {
   const insert = db.prepare(`
     INSERT OR IGNORE INTO daily_metrics
       (campaign_id, date, ad_spend, impressions, clicks,
-       attributed_revenue, attributed_orders, new_to_brand_orders, new_to_brand_revenue)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+       attributed_revenue, attributed_orders, new_to_brand_orders, new_to_brand_revenue,
+       ctr, cpc, roas, ntb_rate,
+       detail_page_views, add_to_cart, campaign_type, placement, attributed_window)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
 
   const run = db.transaction((rows: NormalizedRow[]) => {
@@ -157,7 +229,16 @@ export function insertMetrics(network: string, rows: NormalizedRow[]): number {
         row.attributed_revenue,
         row.attributed_orders,
         row.new_to_brand_orders,
-        row.new_to_brand_revenue
+        row.new_to_brand_revenue,
+        row.ctr,
+        row.cpc,
+        row.roas,
+        row.ntb_rate,
+        row.detail_page_views,
+        row.add_to_cart,
+        row.campaign_type ?? null,
+        row.placement ?? null,
+        row.attributed_window ?? null
       );
       if (result.changes > 0) inserted++;
     }

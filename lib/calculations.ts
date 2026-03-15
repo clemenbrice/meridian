@@ -5,11 +5,19 @@ export interface KPIs {
   totalRevenue: number;
   blendedROAS: number;
   totalOrders: number;
-  ntbRate: number; // new-to-brand %
+  ntbRate: number;
   totalImpressions: number;
   totalClicks: number;
   ctr: number;
+  cpc: number | null;
   totalNtbOrders: number;
+}
+
+export interface FunnelData {
+  impressions: number;
+  detailPageViews: number;
+  addToCart: number;
+  orders: number;
 }
 
 export interface NetworkAggregate {
@@ -39,6 +47,12 @@ export interface CampaignAggregate {
   clicks: number;
   ntbOrders: number;
   ntbRate: number;
+  ctr: number;
+  cpc: number | null;
+  detail_page_views: number;
+  add_to_cart: number;
+  attributed_window: string | null;
+  campaign_type: string | null;
 }
 
 export function computeKPIs(rows: MetricsRow[]): KPIs {
@@ -63,8 +77,26 @@ export function computeKPIs(rows: MetricsRow[]): KPIs {
     totalImpressions,
     totalClicks,
     ctr: totalImpressions > 0 ? totalClicks / totalImpressions : 0,
+    cpc: totalClicks > 0 ? totalSpend / totalClicks : null,
     totalNtbOrders,
   };
+}
+
+export function aggregateAmazonFunnel(rows: MetricsRow[]): FunnelData | null {
+  const amazonRows = rows.filter(r => r.network === 'amazon');
+  if (amazonRows.length === 0) return null;
+
+  let impressions = 0, detailPageViews = 0, addToCart = 0, orders = 0;
+  for (const r of amazonRows) {
+    impressions += r.impressions;
+    detailPageViews += r.detail_page_views ?? 0;
+    addToCart += r.add_to_cart ?? 0;
+    orders += r.attributed_orders;
+  }
+
+  if (detailPageViews === 0) return null;
+
+  return { impressions, detailPageViews, addToCart, orders };
 }
 
 export function aggregateByNetwork(rows: MetricsRow[]): NetworkAggregate[] {
@@ -114,6 +146,10 @@ export function aggregateByCampaign(rows: MetricsRow[]): CampaignAggregate[] {
       spend: 0, revenue: 0, roas: 0,
       orders: 0, impressions: 0, clicks: 0,
       ntbOrders: 0, ntbRate: 0,
+      ctr: 0, cpc: null,
+      detail_page_views: 0, add_to_cart: 0,
+      attributed_window: r.attributed_window,
+      campaign_type: r.campaign_type,
     };
     existing.spend += r.ad_spend;
     existing.revenue += r.attributed_revenue;
@@ -121,6 +157,10 @@ export function aggregateByCampaign(rows: MetricsRow[]): CampaignAggregate[] {
     existing.impressions += r.impressions;
     existing.clicks += r.clicks;
     existing.ntbOrders += r.new_to_brand_orders;
+    existing.detail_page_views += r.detail_page_views ?? 0;
+    existing.add_to_cart += r.add_to_cart ?? 0;
+    if (r.attributed_window) existing.attributed_window = r.attributed_window;
+    if (r.campaign_type) existing.campaign_type = r.campaign_type;
     map.set(key, existing);
   }
 
@@ -129,6 +169,8 @@ export function aggregateByCampaign(rows: MetricsRow[]): CampaignAggregate[] {
       ...c,
       roas: c.spend > 0 ? c.revenue / c.spend : 0,
       ntbRate: c.orders > 0 ? c.ntbOrders / c.orders : 0,
+      ctr: c.impressions > 0 ? c.clicks / c.impressions : 0,
+      cpc: c.clicks > 0 ? c.spend / c.clicks : null,
     }))
     .sort((a, b) => b.roas - a.roas)
     .slice(0, 10);

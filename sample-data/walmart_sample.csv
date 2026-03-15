@@ -1,91 +1,91 @@
-report_date,campaign,campaign_id,spend,total_impressions,total_clicks,attributed_revenue_14d,attributed_units_14d,new_buyer_orders,new_buyer_revenue
-2026-02-12,Walmart SP - Electronics,WMT-001,428.60,62400,1120,2548.40,53,21,842.40
-2026-02-12,Walmart Display - Baby & Toddler,WMT-002,312.80,95200,520,1398.40,28,12,458.40
-2026-02-12,Walmart Connect - Grocery Essentials,WMT-003,198.40,48200,680,1118.40,24,9,368.40
-2026-02-13,Walmart SP - Electronics,WMT-001,412.40,59800,1080,2448.40,51,20,808.40
-2026-02-13,Walmart Display - Baby & Toddler,WMT-002,298.60,90800,498,1338.40,27,11,438.80
-2026-02-13,Walmart Connect - Grocery Essentials,WMT-003,188.60,45800,652,1062.40,23,8,348.40
-2026-02-14,Walmart SP - Electronics,WMT-001,445.20,64800,1158,2648.40,55,22,872.40
-2026-02-14,Walmart Display - Baby & Toddler,WMT-002,325.40,98400,538,1458.40,29,13,478.40
-2026-02-14,Walmart Connect - Grocery Essentials,WMT-003,208.20,50200,708,1168.40,25,10,388.40
-2026-02-15,Walmart SP - Electronics,WMT-001,398.80,57200,1040,2348.40,49,19,772.40
-2026-02-15,Walmart Display - Baby & Toddler,WMT-002,284.40,86400,475,1278.40,26,10,418.40
-2026-02-15,Walmart Connect - Grocery Essentials,WMT-003,178.60,43400,622,1008.40,22,8,328.40
-2026-02-16,Walmart SP - Electronics,WMT-001,462.40,67200,1198,2748.40,57,23,908.40
-2026-02-16,Walmart Display - Baby & Toddler,WMT-002,338.60,102000,558,1518.40,30,13,498.40
-2026-02-16,Walmart Connect - Grocery Essentials,WMT-003,218.40,52600,738,1228.40,26,10,408.40
-2026-02-17,Walmart SP - Electronics,WMT-001,482.80,70000,1242,2848.40,59,24,948.40
-2026-02-17,Walmart Display - Baby & Toddler,WMT-002,352.20,106000,578,1578.40,32,14,518.40
-2026-02-17,Walmart Connect - Grocery Essentials,WMT-003,228.60,55000,762,1288.40,27,11,428.40
-2026-02-18,Walmart SP - Electronics,WMT-001,502.40,73000,1288,2968.40,62,25,988.40
-2026-02-18,Walmart Display - Baby & Toddler,WMT-002,368.40,110200,598,1638.40,33,14,538.40
-2026-02-18,Walmart Connect - Grocery Essentials,WMT-003,238.40,57200,788,1348.40,28,11,448.40
-2026-02-19,Walmart SP - Electronics,WMT-001,522.80,76000,1335,3068.40,64,26,1028.40
-2026-02-19,Walmart Display - Baby & Toddler,WMT-002,384.80,114600,618,1698.40,34,15,558.40
-2026-02-19,Walmart Connect - Grocery Essentials,WMT-003,248.60,59600,812,1408.40,29,12,468.40
-2026-02-20,Walmart SP - Electronics,WMT-001,432.40,63200,1128,2568.40,53,21,848.40
-2026-02-20,Walmart Display - Baby & Toddler,WMT-002,316.60,96200,522,1408.40,28,12,462.40
-2026-02-20,Walmart Connect - Grocery Essentials,WMT-003,202.40,49000,688,1138.40,24,9,374.80
-2026-02-21,Walmart SP - Electronics,WMT-001,448.60,65800,1168,2668.40,55,22,878.40
-2026-02-21,Walmart Display - Baby & Toddler,WMT-002,330.40,99800,542,1478.40,30,13,488.40
-2026-02-21,Walmart Connect - Grocery Essentials,WMT-003,212.60,51400,718,1188.40,25,10,392.40
-2026-02-22,Walmart SP - Electronics,WMT-001,465.20,68200,1208,2768.40,57,23,908.40
-2026-02-22,Walmart Display - Baby & Toddler,WMT-002,342.20,103200,560,1528.40,31,13,502.40
-2026-02-22,Walmart Connect - Grocery Essentials,WMT-003,222.40,53600,742,1248.40,26,10,412.40
-2026-02-23,Walmart SP - Electronics,WMT-001,484.80,71000,1252,2868.40,60,24,952.40
-2026-02-23,Walmart Display - Baby & Toddler,WMT-002,355.60,107200,582,1588.40,32,14,522.40
-2026-02-23,Walmart Connect - Grocery Essentials,WMT-003,232.40,55800,768,1308.40,27,11,432.40
-2026-02-24,Walmart SP - Electronics,WMT-001,504.60,74000,1298,2968.40,62,25,992.40
-2026-02-24,Walmart Display - Baby & Toddler,WMT-002,370.80,111400,602,1648.40,33,14,542.40
-2026-02-24,Walmart Connect - Grocery Essentials,WMT-003,242.60,57800,792,1368.40,28,12,452.40
-2026-02-25,Walmart SP - Electronics,WMT-001,524.80,77000,1342,3082.40,64,26,1032.40
-2026-02-25,Walmart Display - Baby & Toddler,WMT-002,386.80,115400,622,1708.40,34,15,562.40
-2026-02-25,Walmart Connect - Grocery Essentials,WMT-003,252.80,60200,818,1428.40,30,12,472.40
-2026-02-26,Walmart SP - Electronics,WMT-001,438.40,64200,1142,2608.40,54,22,862.40
-2026-02-26,Walmart Display - Baby & Toddler,WMT-002,320.60,97200,528,1428.40,29,12,468.40
-2026-02-26,Walmart Connect - Grocery Essentials,WMT-003,206.20,50000,698,1158.40,25,9,382.40
-2026-02-27,Walmart SP - Electronics,WMT-001,455.20,66800,1182,2708.40,56,22,892.40
-2026-02-27,Walmart Display - Baby & Toddler,WMT-002,334.60,101200,548,1498.40,30,13,492.40
-2026-02-27,Walmart Connect - Grocery Essentials,WMT-003,216.80,52400,728,1208.40,25,10,398.40
-2026-02-28,Walmart SP - Electronics,WMT-001,472.40,69400,1222,2808.40,58,23,928.40
-2026-02-28,Walmart Display - Baby & Toddler,WMT-002,348.40,105000,568,1558.40,31,14,512.40
-2026-02-28,Walmart Connect - Grocery Essentials,WMT-003,226.40,54600,752,1268.40,27,11,422.40
-2026-03-01,Walmart SP - Electronics,WMT-001,490.60,72200,1262,2908.40,60,24,958.40
-2026-03-01,Walmart Display - Baby & Toddler,WMT-002,362.80,109200,592,1628.40,33,14,532.40
-2026-03-01,Walmart Connect - Grocery Essentials,WMT-003,236.60,56800,778,1328.40,28,11,442.40
-2026-03-02,Walmart SP - Electronics,WMT-001,510.80,75200,1308,3008.40,63,25,1002.40
-2026-03-02,Walmart Display - Baby & Toddler,WMT-002,378.60,113400,612,1678.40,34,14,552.40
-2026-03-02,Walmart Connect - Grocery Essentials,WMT-003,246.80,59000,802,1388.40,29,12,462.40
-2026-03-03,Walmart SP - Electronics,WMT-001,532.40,78200,1355,3108.40,65,26,1042.40
-2026-03-03,Walmart Display - Baby & Toddler,WMT-002,394.40,117600,632,1738.40,35,15,572.40
-2026-03-03,Walmart Connect - Grocery Essentials,WMT-003,258.40,61400,828,1448.40,30,12,482.40
-2026-03-04,Walmart SP - Electronics,WMT-001,442.40,65000,1152,2628.40,55,22,868.40
-2026-03-04,Walmart Display - Baby & Toddler,WMT-002,326.40,98400,532,1458.40,29,12,478.40
-2026-03-04,Walmart Connect - Grocery Essentials,WMT-003,210.40,51200,708,1178.40,25,10,388.40
-2026-03-05,Walmart SP - Electronics,WMT-001,460.40,67800,1192,2728.40,57,23,908.40
-2026-03-05,Walmart Display - Baby & Toddler,WMT-002,340.60,102600,552,1518.40,31,13,502.40
-2026-03-05,Walmart Connect - Grocery Essentials,WMT-003,220.60,53400,738,1228.40,26,10,412.40
-2026-03-06,Walmart SP - Electronics,WMT-001,478.60,70600,1232,2828.40,59,23,942.40
-2026-03-06,Walmart Display - Baby & Toddler,WMT-002,354.60,106600,572,1578.40,32,14,522.40
-2026-03-06,Walmart Connect - Grocery Essentials,WMT-003,230.60,55400,762,1288.40,27,11,428.40
-2026-03-07,Walmart SP - Electronics,WMT-001,498.60,73600,1278,2928.40,61,25,972.40
-2026-03-07,Walmart Display - Baby & Toddler,WMT-002,368.80,110600,592,1638.40,33,14,542.40
-2026-03-07,Walmart Connect - Grocery Essentials,WMT-003,240.40,57600,788,1348.40,28,11,448.40
-2026-03-08,Walmart SP - Electronics,WMT-001,518.40,76600,1322,3028.40,63,25,1008.40
-2026-03-08,Walmart Display - Baby & Toddler,WMT-002,384.40,114800,612,1688.40,34,15,558.40
-2026-03-08,Walmart Connect - Grocery Essentials,WMT-003,250.40,59800,812,1408.40,29,12,468.40
-2026-03-09,Walmart SP - Electronics,WMT-001,540.20,79600,1368,3148.40,66,26,1058.40
-2026-03-09,Walmart Display - Baby & Toddler,WMT-002,400.80,119400,635,1758.40,35,15,578.40
-2026-03-09,Walmart Connect - Grocery Essentials,WMT-003,262.40,62000,838,1468.40,31,12,488.40
-2026-03-10,Walmart SP - Electronics,WMT-001,558.60,82600,1412,3248.40,68,27,1098.40
-2026-03-10,Walmart Display - Baby & Toddler,WMT-002,416.60,123200,658,1818.40,37,16,598.40
-2026-03-10,Walmart Connect - Grocery Essentials,WMT-003,272.40,64200,862,1528.40,32,13,508.40
-2026-03-11,Walmart SP - Electronics,WMT-001,468.40,68800,1208,2788.40,58,23,928.40
-2026-03-11,Walmart Display - Baby & Toddler,WMT-002,348.40,105600,562,1568.40,31,13,512.40
-2026-03-11,Walmart Connect - Grocery Essentials,WMT-003,228.60,55200,748,1268.40,27,11,422.40
-2026-03-12,Walmart SP - Electronics,WMT-001,486.60,71800,1248,2888.40,60,24,958.40
-2026-03-12,Walmart Display - Baby & Toddler,WMT-002,362.40,108800,582,1628.40,33,14,538.40
-2026-03-12,Walmart Connect - Grocery Essentials,WMT-003,238.40,57400,772,1328.40,28,11,442.40
-2026-03-13,Walmart SP - Electronics,WMT-001,505.20,74800,1290,2988.40,62,25,992.40
-2026-03-13,Walmart Display - Baby & Toddler,WMT-002,376.80,113000,602,1668.40,34,14,552.40
-2026-03-13,Walmart Connect - Grocery Essentials,WMT-003,248.60,59400,798,1388.40,29,11,462.40
+report_date,campaign,campaign_id,spend,total_impressions,total_clicks,attributed_revenue_14d,attributed_units_14d,new_buyer_orders,new_buyer_revenue,Ad Type,Placement
+2026-02-12,Walmart SP – Electronics,WMT-001,467.45,64990,998,2708.9,53,18,874.0,Sponsored Products,Search In-Grid
+2026-02-12,Walmart Display – Baby & Toddler,WMT-002,332.03,95624,574,1354.58,23,9,561.86,Display,Item Carousel – Home Page
+2026-02-12,Walmart SB – Grocery Essentials,WMT-003,201.94,49766,615,1005.82,20,6,313.82,Sponsored Brands,Search Brand Amplifier
+2026-02-13,Walmart SP – Electronics,WMT-001,391.42,62678,1217,2469.81,56,21,963.23,Sponsored Products,Search In-Grid
+2026-02-13,Walmart Display – Baby & Toddler,WMT-002,338.99,104098,533,1229.87,23,9,457.19,Display,Item Carousel – Home Page
+2026-02-13,Walmart SB – Grocery Essentials,WMT-003,205.0,44536,667,1123.69,26,11,484.92,Sponsored Brands,Search Brand Amplifier
+2026-02-14,Walmart SP – Electronics,WMT-001,416.98,59331,1247,2267.3,58,20,758.37,Sponsored Products,Search In-Grid
+2026-02-14,Walmart Display – Baby & Toddler,WMT-002,329.76,101445,524,1514.73,23,9,580.87,Display,Item Carousel – Home Page
+2026-02-14,Walmart SB – Grocery Essentials,WMT-003,203.9,43325,650,1068.25,23,7,338.12,Sponsored Brands,Search Brand Amplifier
+2026-02-15,Walmart SP – Electronics,WMT-001,400.97,57765,988,2609.37,58,21,888.09,Sponsored Products,Search In-Grid
+2026-02-15,Walmart Display – Baby & Toddler,WMT-002,316.06,93040,521,1461.68,28,10,511.59,Display,Item Carousel – Home Page
+2026-02-15,Walmart SB – Grocery Essentials,WMT-003,212.38,50347,602,1130.2,21,8,434.86,Sponsored Brands,Search Brand Amplifier
+2026-02-16,Walmart SP – Electronics,WMT-001,437.42,67424,1198,2423.99,57,19,864.56,Sponsored Products,Search In-Grid
+2026-02-16,Walmart Display – Baby & Toddler,WMT-002,282.19,100576,563,1525.73,28,10,539.45,Display,Item Carousel – Home Page
+2026-02-16,Walmart SB – Grocery Essentials,WMT-003,174.59,50338,748,1107.0,21,9,502.89,Sponsored Brands,Search Brand Amplifier
+2026-02-17,Walmart SP – Electronics,WMT-001,459.56,59430,1155,2860.62,47,20,1241.63,Sponsored Products,Search In-Grid
+2026-02-17,Walmart Display – Baby & Toddler,WMT-002,315.87,91853,572,1568.11,28,11,591.4,Display,Item Carousel – Home Page
+2026-02-17,Walmart SB – Grocery Essentials,WMT-003,177.0,46432,642,1186.02,21,7,423.01,Sponsored Brands,Search Brand Amplifier
+2026-02-18,Walmart SP – Electronics,WMT-001,444.43,63401,1214,2773.23,55,24,1173.83,Sponsored Products,Search In-Grid
+2026-02-18,Walmart Display – Baby & Toddler,WMT-002,307.34,100865,513,1497.24,27,12,618.86,Display,Item Carousel – Home Page
+2026-02-18,Walmart SB – Grocery Essentials,WMT-003,198.44,48285,716,1127.13,20,7,414.22,Sponsored Brands,Search Brand Amplifier
+2026-02-19,Walmart SP – Electronics,WMT-001,373.65,57279,1244,2508.68,46,19,1108.73,Sponsored Products,Search In-Grid
+2026-02-19,Walmart Display – Baby & Toddler,WMT-002,319.73,91668,498,1484.33,31,12,614.8,Display,Item Carousel – Home Page
+2026-02-19,Walmart SB – Grocery Essentials,WMT-003,195.06,48826,619,1147.73,22,7,350.58,Sponsored Brands,Search Brand Amplifier
+2026-02-20,Walmart SP – Electronics,WMT-001,420.01,62999,1253,2631.99,50,19,980.15,Sponsored Products,Search In-Grid
+2026-02-20,Walmart Display – Baby & Toddler,WMT-002,292.61,98894,556,1353.86,32,12,533.08,Display,Item Carousel – Home Page
+2026-02-20,Walmart SB – Grocery Essentials,WMT-003,206.75,44279,682,987.28,26,10,364.53,Sponsored Brands,Search Brand Amplifier
+2026-02-21,Walmart SP – Electronics,WMT-001,473.14,65674,1061,2463.09,49,19,926.42,Sponsored Products,Search In-Grid
+2026-02-21,Walmart Display – Baby & Toddler,WMT-002,327.65,98343,473,1479.45,24,10,622.6,Display,Item Carousel – Home Page
+2026-02-21,Walmart SB – Grocery Essentials,WMT-003,206.52,48581,630,1212.52,21,9,519.65,Sponsored Brands,Search Brand Amplifier
+2026-02-22,Walmart SP – Electronics,WMT-001,366.14,60860,1077,3014.05,55,22,1145.34,Sponsored Products,Search In-Grid
+2026-02-22,Walmart Display – Baby & Toddler,WMT-002,359.95,90577,466,1333.03,24,11,635.41,Display,Item Carousel – Home Page
+2026-02-22,Walmart SB – Grocery Essentials,WMT-003,217.91,51826,607,1209.31,22,9,484.82,Sponsored Brands,Search Brand Amplifier
+2026-02-23,Walmart SP – Electronics,WMT-001,384.63,67151,1069,2808.95,46,19,1137.01,Sponsored Products,Search In-Grid
+2026-02-23,Walmart Display – Baby & Toddler,WMT-002,333.62,100055,535,1327.72,30,12,536.4,Display,Item Carousel – Home Page
+2026-02-23,Walmart SB – Grocery Essentials,WMT-003,186.68,50884,647,1094.24,27,11,463.63,Sponsored Brands,Search Brand Amplifier
+2026-02-24,Walmart SP – Electronics,WMT-001,463.71,64039,1199,3027.52,51,21,1171.83,Sponsored Products,Search In-Grid
+2026-02-24,Walmart Display – Baby & Toddler,WMT-002,289.53,101247,568,1369.93,24,11,665.56,Display,Item Carousel – Home Page
+2026-02-24,Walmart SB – Grocery Essentials,WMT-003,218.86,47870,619,1248.91,24,10,551.6,Sponsored Brands,Search Brand Amplifier
+2026-02-25,Walmart SP – Electronics,WMT-001,382.72,62967,1031,3009.81,52,21,1288.43,Sponsored Products,Search In-Grid
+2026-02-25,Walmart Display – Baby & Toddler,WMT-002,353.42,99095,463,1382.28,28,11,532.18,Display,Item Carousel – Home Page
+2026-02-25,Walmart SB – Grocery Essentials,WMT-003,173.15,46878,605,1075.0,21,8,430.0,Sponsored Brands,Search Brand Amplifier
+2026-02-26,Walmart SP – Electronics,WMT-001,381.47,60500,1226,2786.56,49,22,1251.11,Sponsored Products,Search In-Grid
+2026-02-26,Walmart Display – Baby & Toddler,WMT-002,323.83,88096,459,1313.52,25,12,592.66,Display,Item Carousel – Home Page
+2026-02-26,Walmart SB – Grocery Essentials,WMT-003,185.41,48134,629,968.98,26,11,381.26,Sponsored Brands,Search Brand Amplifier
+2026-02-27,Walmart SP – Electronics,WMT-001,471.23,63989,993,2729.38,52,23,1134.79,Sponsored Products,Search In-Grid
+2026-02-27,Walmart Display – Baby & Toddler,WMT-002,306.36,97061,487,1467.53,25,9,528.31,Display,Item Carousel – Home Page
+2026-02-27,Walmart SB – Grocery Essentials,WMT-003,189.72,51818,737,1148.82,20,7,426.21,Sponsored Brands,Search Brand Amplifier
+2026-02-28,Walmart SP – Electronics,WMT-001,369.39,62138,1176,2392.01,45,17,948.83,Sponsored Products,Search In-Grid
+2026-02-28,Walmart Display – Baby & Toddler,WMT-002,298.43,88896,555,1473.03,28,11,538.18,Display,Item Carousel – Home Page
+2026-02-28,Walmart SB – Grocery Essentials,WMT-003,200.73,46068,716,1334.09,27,9,466.93,Sponsored Brands,Search Brand Amplifier
+2026-03-01,Walmart SP – Electronics,WMT-001,371.9,63298,1003,2427.49,46,17,950.94,Sponsored Products,Search In-Grid
+2026-03-01,Walmart Display – Baby & Toddler,WMT-002,295.68,95660,522,1383.15,31,14,599.66,Display,Item Carousel – Home Page
+2026-03-01,Walmart SB – Grocery Essentials,WMT-003,213.05,46331,671,1089.98,20,8,422.91,Sponsored Brands,Search Brand Amplifier
+2026-03-02,Walmart SP – Electronics,WMT-001,379.78,61829,1208,2959.04,59,23,1118.92,Sponsored Products,Search In-Grid
+2026-03-02,Walmart Display – Baby & Toddler,WMT-002,283.59,101802,504,1640.57,31,13,722.38,Display,Item Carousel – Home Page
+2026-03-02,Walmart SB – Grocery Essentials,WMT-003,211.49,44493,708,1186.04,22,9,470.64,Sponsored Brands,Search Brand Amplifier
+2026-03-03,Walmart SP – Electronics,WMT-001,376.97,61172,1136,2439.13,58,21,909.63,Sponsored Products,Search In-Grid
+2026-03-03,Walmart Display – Baby & Toddler,WMT-002,299.06,86887,550,1614.01,28,13,719.39,Display,Item Carousel – Home Page
+2026-03-03,Walmart SB – Grocery Essentials,WMT-003,226.51,44139,617,1212.93,26,10,466.51,Sponsored Brands,Search Brand Amplifier
+2026-03-04,Walmart SP – Electronics,WMT-001,460.09,58421,1000,2293.13,59,20,730.69,Sponsored Products,Search In-Grid
+2026-03-04,Walmart Display – Baby & Toddler,WMT-002,288.21,97503,503,1375.63,32,12,526.18,Display,Item Carousel – Home Page
+2026-03-04,Walmart SB – Grocery Essentials,WMT-003,208.64,49277,693,1124.01,21,7,374.67,Sponsored Brands,Search Brand Amplifier
+2026-03-05,Walmart SP – Electronics,WMT-001,414.91,66442,1127,2388.4,48,16,827.98,Sponsored Products,Search In-Grid
+2026-03-05,Walmart Display – Baby & Toddler,WMT-002,312.91,98180,573,1463.13,27,11,613.97,Display,Item Carousel – Home Page
+2026-03-05,Walmart SB – Grocery Essentials,WMT-003,181.05,47878,723,1028.63,22,7,324.02,Sponsored Brands,Search Brand Amplifier
+2026-03-06,Walmart SP – Electronics,WMT-001,479.19,63092,1029,2888.62,55,24,1235.28,Sponsored Products,Search In-Grid
+2026-03-06,Walmart Display – Baby & Toddler,WMT-002,272.15,103265,494,1624.43,25,10,682.26,Display,Item Carousel – Home Page
+2026-03-06,Walmart SB – Grocery Essentials,WMT-003,198.52,45188,649,1260.24,23,8,403.28,Sponsored Brands,Search Brand Amplifier
+2026-03-07,Walmart SP – Electronics,WMT-001,434.94,61844,1224,2882.51,49,21,1309.48,Sponsored Products,Search In-Grid
+2026-03-07,Walmart Display – Baby & Toddler,WMT-002,272.22,98546,548,1540.04,31,14,723.32,Display,Item Carousel – Home Page
+2026-03-07,Walmart SB – Grocery Essentials,WMT-003,217.21,44408,630,1330.79,21,9,564.64,Sponsored Brands,Search Brand Amplifier
+2026-03-08,Walmart SP – Electronics,WMT-001,430.23,57902,1078,2850.51,49,20,1163.47,Sponsored Products,Search In-Grid
+2026-03-08,Walmart Display – Baby & Toddler,WMT-002,347.58,89568,523,1263.17,25,10,490.11,Display,Item Carousel – Home Page
+2026-03-08,Walmart SB – Grocery Essentials,WMT-003,210.43,48869,730,1300.48,21,8,470.65,Sponsored Brands,Search Brand Amplifier
+2026-03-09,Walmart SP – Electronics,WMT-001,486.6,60296,1049,2723.19,47,20,1181.98,Sponsored Products,Search In-Grid
+2026-03-09,Walmart Display – Baby & Toddler,WMT-002,321.62,90552,478,1510.62,32,14,693.94,Display,Item Carousel – Home Page
+2026-03-09,Walmart SB – Grocery Essentials,WMT-003,201.78,43664,618,968.09,24,8,335.6,Sponsored Brands,Search Brand Amplifier
+2026-03-10,Walmart SP – Electronics,WMT-001,417.29,66269,1000,2609.95,54,23,1189.46,Sponsored Products,Search In-Grid
+2026-03-10,Walmart Display – Baby & Toddler,WMT-002,311.4,98806,495,1410.22,23,9,546.31,Display,Item Carousel – Home Page
+2026-03-10,Walmart SB – Grocery Essentials,WMT-003,197.06,46542,685,1187.69,25,10,460.82,Sponsored Brands,Search Brand Amplifier
+2026-03-11,Walmart SP – Electronics,WMT-001,490.66,61458,1189,2282.42,56,23,946.8,Sponsored Products,Search In-Grid
+2026-03-11,Walmart Display – Baby & Toddler,WMT-002,296.01,100785,472,1319.17,26,10,476.93,Display,Item Carousel – Home Page
+2026-03-11,Walmart SB – Grocery Essentials,WMT-003,185.54,49493,755,1113.92,22,8,433.42,Sponsored Brands,Search Brand Amplifier
+2026-03-12,Walmart SP – Electronics,WMT-001,456.39,58910,1066,2610.15,59,23,1078.57,Sponsored Products,Search In-Grid
+2026-03-12,Walmart Display – Baby & Toddler,WMT-002,312.75,88450,577,1380.71,30,12,524.67,Display,Item Carousel – Home Page
+2026-03-12,Walmart SB – Grocery Essentials,WMT-003,189.26,44028,670,1143.95,27,10,427.92,Sponsored Brands,Search Brand Amplifier
+2026-03-13,Walmart SP – Electronics,WMT-001,472.58,62860,1053,2952.77,56,25,1291.84,Sponsored Products,Search In-Grid
+2026-03-13,Walmart Display – Baby & Toddler,WMT-002,270.3,87176,529,1463.2,28,12,583.19,Display,Item Carousel – Home Page
+2026-03-13,Walmart SB – Grocery Essentials,WMT-003,198.25,52208,669,1273.24,21,7,458.37,Sponsored Brands,Search Brand Amplifier

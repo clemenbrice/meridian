@@ -7,6 +7,7 @@ import {
   aggregateByNetwork,
   aggregateByDay,
   aggregateByCampaign,
+  aggregateAmazonFunnel,
   pctChange,
 } from '@/lib/calculations';
 import { subDays, format } from 'date-fns';
@@ -41,7 +42,6 @@ export async function GET(req: NextRequest) {
 
     const { start, end } = getDateRange(range, customStart, customEnd);
 
-    // Compute prior period for % change
     const days = Math.ceil(
       (new Date(end).getTime() - new Date(start).getTime()) / 86_400_000
     );
@@ -59,6 +59,10 @@ export async function GET(req: NextRequest) {
       roasChange: pctChange(currentKPIs.blendedROAS, priorKPIs.blendedROAS),
       ordersChange: pctChange(currentKPIs.totalOrders, priorKPIs.totalOrders),
       ntbRateChange: pctChange(currentKPIs.ntbRate, priorKPIs.ntbRate),
+      ctrChange: pctChange(currentKPIs.ctr, priorKPIs.ctr),
+      cpcChange: currentKPIs.cpc !== null && priorKPIs.cpc !== null
+        ? pctChange(currentKPIs.cpc, priorKPIs.cpc)
+        : null,
     };
 
     return NextResponse.json({
@@ -68,6 +72,7 @@ export async function GET(req: NextRequest) {
       byNetwork: aggregateByNetwork(currentRows),
       byDay: aggregateByDay(currentRows),
       topCampaigns: aggregateByCampaign(currentRows),
+      funnelData: aggregateAmazonFunnel(currentRows),
       availableNetworks: getNetworks(),
     });
   } catch (err) {

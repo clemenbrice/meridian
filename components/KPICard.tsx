@@ -5,12 +5,16 @@ interface KPICardProps {
   value: string;
   change: number | null; // decimal e.g. 0.12 = +12%
   subtitle?: string;
+  invertChange?: boolean; // for metrics where lower is better (e.g. CPC)
 }
 
-export default function KPICard({ title, value, change, subtitle }: KPICardProps) {
+export default function KPICard({ title, value, change, subtitle, invertChange }: KPICardProps) {
   const hasChange = change !== null && !isNaN(change);
-  const isPositive = hasChange && change > 0;
-  const isNegative = hasChange && change < 0;
+  const rawPositive = hasChange && change! > 0;
+  const rawNegative = hasChange && change! < 0;
+  // When invertChange: up is bad (red), down is good (green)
+  const isGood = invertChange ? rawNegative : rawPositive;
+  const isBad = invertChange ? rawPositive : rawNegative;
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
@@ -19,17 +23,17 @@ export default function KPICard({ title, value, change, subtitle }: KPICardProps
       {subtitle && <p className="mt-0.5 text-xs text-gray-400">{subtitle}</p>}
       {hasChange && (
         <div className={`mt-3 flex items-center gap-1 text-xs font-semibold ${
-          isPositive ? 'text-emerald-600' : isNegative ? 'text-red-500' : 'text-gray-400'
+          isGood ? 'text-emerald-600' : isBad ? 'text-red-500' : 'text-gray-400'
         }`}>
-          {isPositive ? (
+          {rawPositive ? (
             <TrendingUp className="w-3.5 h-3.5" />
-          ) : isNegative ? (
+          ) : rawNegative ? (
             <TrendingDown className="w-3.5 h-3.5" />
           ) : (
             <Minus className="w-3.5 h-3.5" />
           )}
           <span>
-            {isPositive ? '+' : ''}{(change * 100).toFixed(1)}% vs prior period
+            {rawPositive ? '+' : ''}{(change! * 100).toFixed(1)}% vs prior period
           </span>
         </div>
       )}

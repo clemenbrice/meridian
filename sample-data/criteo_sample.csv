@@ -1,121 +1,121 @@
-Day,CampaignName,CampaignId,Cost,Displays,Clicks,Revenue,Orders,NewCustomerOrders,NewCustomerRevenue
-2026-02-12,Criteo Retargeting - Fashion,CRT-001,285.40,128400,680,1712.40,34,11,558.40
-2026-02-12,Criteo Prospecting - Beauty,CRT-002,198.60,86200,422,1188.40,25,10,388.40
-2026-02-12,Criteo Dynamic - Sports,CRT-003,162.40,58600,502,972.40,21,8,312.40
-2026-02-12,Criteo Upper Funnel - Travel,CRT-004,118.20,198400,285,708.40,14,5,218.40
-2026-02-13,Criteo Retargeting - Fashion,CRT-001,272.40,122600,652,1638.40,33,11,538.40
-2026-02-13,Criteo Prospecting - Beauty,CRT-002,188.80,82200,404,1128.40,24,9,368.40
-2026-02-13,Criteo Dynamic - Sports,CRT-003,154.60,55800,478,924.40,20,7,298.40
-2026-02-13,Criteo Upper Funnel - Travel,CRT-004,112.40,188800,272,672.40,13,5,208.40
-2026-02-14,Criteo Retargeting - Fashion,CRT-001,298.60,133600,708,1792.40,36,12,582.40
-2026-02-14,Criteo Prospecting - Beauty,CRT-002,208.40,89800,440,1248.40,26,10,408.40
-2026-02-14,Criteo Dynamic - Sports,CRT-003,170.80,61600,528,1024.40,22,8,328.40
-2026-02-14,Criteo Upper Funnel - Travel,CRT-004,124.40,208400,298,744.40,15,6,228.40
-2026-02-15,Criteo Retargeting - Fashion,CRT-001,260.60,116600,622,1568.40,31,10,508.40
-2026-02-15,Criteo Prospecting - Beauty,CRT-002,180.40,77600,384,1082.40,23,8,348.40
-2026-02-15,Criteo Dynamic - Sports,CRT-003,147.20,53200,456,882.40,19,7,284.40
-2026-02-15,Criteo Upper Funnel - Travel,CRT-004,107.20,180000,260,642.40,13,4,198.40
-2026-02-16,Criteo Retargeting - Fashion,CRT-001,312.80,139800,738,1872.40,37,13,602.40
-2026-02-16,Criteo Prospecting - Beauty,CRT-002,218.60,93400,458,1308.40,27,11,428.40
-2026-02-16,Criteo Dynamic - Sports,CRT-003,178.40,64400,548,1068.40,23,9,342.40
-2026-02-16,Criteo Upper Funnel - Travel,CRT-004,130.60,218000,312,780.40,15,6,238.40
-2026-02-17,Criteo Retargeting - Fashion,CRT-001,325.40,145600,768,1952.40,39,13,628.40
-2026-02-17,Criteo Prospecting - Beauty,CRT-002,228.40,97000,478,1368.40,29,11,448.40
-2026-02-17,Criteo Dynamic - Sports,CRT-003,186.60,67200,572,1116.40,24,9,358.40
-2026-02-17,Criteo Upper Funnel - Travel,CRT-004,136.40,228000,326,816.40,16,6,248.40
-2026-02-18,Criteo Retargeting - Fashion,CRT-001,338.40,151400,798,2032.40,40,14,652.40
-2026-02-18,Criteo Prospecting - Beauty,CRT-002,238.60,100600,498,1428.40,30,12,468.40
-2026-02-18,Criteo Dynamic - Sports,CRT-003,194.40,70000,596,1164.40,25,9,372.40
-2026-02-18,Criteo Upper Funnel - Travel,CRT-004,142.40,238000,340,852.40,17,6,258.40
-2026-02-19,Criteo Retargeting - Fashion,CRT-001,352.40,157400,828,2112.40,42,14,678.40
-2026-02-19,Criteo Prospecting - Beauty,CRT-002,248.40,104200,518,1488.40,31,12,488.40
-2026-02-19,Criteo Dynamic - Sports,CRT-003,202.40,72800,622,1212.40,26,10,388.40
-2026-02-19,Criteo Upper Funnel - Travel,CRT-004,148.40,248000,354,888.40,17,7,268.40
-2026-02-20,Criteo Retargeting - Fashion,CRT-001,290.20,129800,692,1752.40,35,12,568.40
-2026-02-20,Criteo Prospecting - Beauty,CRT-002,202.40,87200,432,1218.40,26,10,398.40
-2026-02-20,Criteo Dynamic - Sports,CRT-003,165.40,59600,512,996.40,21,8,318.40
-2026-02-20,Criteo Upper Funnel - Travel,CRT-004,120.40,202000,290,726.40,14,5,222.40
-2026-02-21,Criteo Retargeting - Fashion,CRT-001,304.40,136200,722,1832.40,37,12,598.40
-2026-02-21,Criteo Prospecting - Beauty,CRT-002,212.40,90800,452,1278.40,27,10,418.40
-2026-02-21,Criteo Dynamic - Sports,CRT-003,173.20,62400,536,1044.40,22,8,332.40
-2026-02-21,Criteo Upper Funnel - Travel,CRT-004,126.40,212000,302,756.40,15,5,232.40
-2026-02-22,Criteo Retargeting - Fashion,CRT-001,317.40,141800,752,1912.40,38,13,618.40
-2026-02-22,Criteo Prospecting - Beauty,CRT-002,222.40,94400,472,1338.40,28,11,438.40
-2026-02-22,Criteo Dynamic - Sports,CRT-003,180.80,65200,560,1092.40,23,8,348.40
-2026-02-22,Criteo Upper Funnel - Travel,CRT-004,132.60,222000,316,792.40,16,6,242.40
-2026-02-23,Criteo Retargeting - Fashion,CRT-001,330.60,147400,782,1992.40,40,13,642.40
-2026-02-23,Criteo Prospecting - Beauty,CRT-002,232.40,98000,492,1398.40,29,11,458.40
-2026-02-23,Criteo Dynamic - Sports,CRT-003,188.80,68000,584,1140.40,24,9,362.40
-2026-02-23,Criteo Upper Funnel - Travel,CRT-004,138.40,232000,330,828.40,16,6,252.40
-2026-02-24,Criteo Retargeting - Fashion,CRT-001,344.40,153200,812,2072.40,41,14,668.40
-2026-02-24,Criteo Prospecting - Beauty,CRT-002,242.60,101600,512,1458.40,30,12,478.40
-2026-02-24,Criteo Dynamic - Sports,CRT-003,196.80,70800,608,1188.40,25,9,378.40
-2026-02-24,Criteo Upper Funnel - Travel,CRT-004,144.60,242000,346,870.40,17,6,262.40
-2026-02-25,Criteo Retargeting - Fashion,CRT-001,358.40,159000,842,2152.40,43,14,694.40
-2026-02-25,Criteo Prospecting - Beauty,CRT-002,252.60,105200,532,1518.40,32,12,498.40
-2026-02-25,Criteo Dynamic - Sports,CRT-003,204.80,73600,632,1236.40,26,10,392.40
-2026-02-25,Criteo Upper Funnel - Travel,CRT-004,150.60,252000,360,906.40,18,7,274.40
-2026-02-26,Criteo Retargeting - Fashion,CRT-001,295.40,132400,706,1792.40,36,12,578.40
-2026-02-26,Criteo Prospecting - Beauty,CRT-002,206.40,88600,442,1248.40,26,10,408.40
-2026-02-26,Criteo Dynamic - Sports,CRT-003,168.60,60800,522,1020.40,22,8,322.40
-2026-02-26,Criteo Upper Funnel - Travel,CRT-004,122.60,206000,296,738.40,15,5,226.40
-2026-02-27,Criteo Retargeting - Fashion,CRT-001,309.20,138200,736,1872.40,37,12,608.40
-2026-02-27,Criteo Prospecting - Beauty,CRT-002,216.60,92200,462,1308.40,27,11,428.40
-2026-02-27,Criteo Dynamic - Sports,CRT-003,176.60,63400,548,1068.40,23,8,344.40
-2026-02-27,Criteo Upper Funnel - Travel,CRT-004,128.60,216000,308,768.40,15,6,234.40
-2026-02-28,Criteo Retargeting - Fashion,CRT-001,322.40,143800,766,1952.40,39,13,628.40
-2026-02-28,Criteo Prospecting - Beauty,CRT-002,226.60,95800,482,1368.40,28,11,448.40
-2026-02-28,Criteo Dynamic - Sports,CRT-003,184.40,66200,572,1116.40,24,8,356.40
-2026-02-28,Criteo Upper Funnel - Travel,CRT-004,134.40,226000,322,804.40,16,6,244.40
-2026-03-01,Criteo Retargeting - Fashion,CRT-001,336.40,149600,796,2032.40,40,14,652.40
-2026-03-01,Criteo Prospecting - Beauty,CRT-002,236.60,99400,502,1428.40,30,11,468.40
-2026-03-01,Criteo Dynamic - Sports,CRT-003,192.40,69000,596,1164.40,25,9,372.40
-2026-03-01,Criteo Upper Funnel - Travel,CRT-004,140.40,236000,336,840.40,17,6,256.40
-2026-03-02,Criteo Retargeting - Fashion,CRT-001,350.40,155400,826,2112.40,42,14,678.40
-2026-03-02,Criteo Prospecting - Beauty,CRT-002,246.60,103000,522,1488.40,31,12,488.40
-2026-03-02,Criteo Dynamic - Sports,CRT-003,200.40,71800,620,1212.40,26,10,386.40
-2026-03-02,Criteo Upper Funnel - Travel,CRT-004,146.40,246000,350,876.40,17,7,264.40
-2026-03-03,Criteo Retargeting - Fashion,CRT-001,364.80,161400,856,2192.40,44,15,704.40
-2026-03-03,Criteo Prospecting - Beauty,CRT-002,256.60,106600,542,1548.40,32,13,508.40
-2026-03-03,Criteo Dynamic - Sports,CRT-003,208.40,74600,645,1260.40,27,10,402.40
-2026-03-03,Criteo Upper Funnel - Travel,CRT-004,152.40,256000,366,912.40,18,7,276.40
-2026-03-04,Criteo Retargeting - Fashion,CRT-001,300.40,134800,718,1832.40,37,12,592.40
-2026-03-04,Criteo Prospecting - Beauty,CRT-002,210.60,90200,452,1278.40,27,10,418.40
-2026-03-04,Criteo Dynamic - Sports,CRT-003,172.40,62000,532,1044.40,22,8,334.40
-2026-03-04,Criteo Upper Funnel - Travel,CRT-004,124.80,210000,302,756.40,15,6,232.40
-2026-03-05,Criteo Retargeting - Fashion,CRT-001,314.40,140600,748,1912.40,38,13,618.40
-2026-03-05,Criteo Prospecting - Beauty,CRT-002,220.60,93800,472,1338.40,28,11,438.40
-2026-03-05,Criteo Dynamic - Sports,CRT-003,180.20,64800,556,1092.40,23,8,352.40
-2026-03-05,Criteo Upper Funnel - Travel,CRT-004,130.80,220000,316,792.40,16,6,242.40
-2026-03-06,Criteo Retargeting - Fashion,CRT-001,328.40,146400,778,1992.40,40,13,642.40
-2026-03-06,Criteo Prospecting - Beauty,CRT-002,230.60,97400,492,1398.40,29,11,458.40
-2026-03-06,Criteo Dynamic - Sports,CRT-003,188.40,67600,580,1140.40,24,9,364.40
-2026-03-06,Criteo Upper Funnel - Travel,CRT-004,136.80,230000,330,828.40,16,6,252.40
-2026-03-07,Criteo Retargeting - Fashion,CRT-001,342.40,152200,808,2072.40,41,14,668.40
-2026-03-07,Criteo Prospecting - Beauty,CRT-002,240.60,100800,512,1458.40,30,12,478.40
-2026-03-07,Criteo Dynamic - Sports,CRT-003,196.40,70400,604,1188.40,25,9,376.40
-2026-03-07,Criteo Upper Funnel - Travel,CRT-004,142.80,240000,345,864.40,17,6,260.40
-2026-03-08,Criteo Retargeting - Fashion,CRT-001,356.40,158000,838,2152.40,43,14,694.40
-2026-03-08,Criteo Prospecting - Beauty,CRT-002,250.60,104400,532,1518.40,32,12,498.40
-2026-03-08,Criteo Dynamic - Sports,CRT-003,204.40,73200,628,1236.40,26,10,392.40
-2026-03-08,Criteo Upper Funnel - Travel,CRT-004,148.80,250000,360,900.40,18,7,272.40
-2026-03-09,Criteo Retargeting - Fashion,CRT-001,371.60,164000,868,2232.40,45,15,718.40
-2026-03-09,Criteo Prospecting - Beauty,CRT-002,260.80,108000,553,1578.40,33,13,518.40
-2026-03-09,Criteo Dynamic - Sports,CRT-003,212.40,76000,652,1284.40,27,10,406.40
-2026-03-09,Criteo Upper Funnel - Travel,CRT-004,154.80,260000,375,930.40,18,7,280.40
-2026-03-10,Criteo Retargeting - Fashion,CRT-001,386.40,170000,898,2312.40,46,16,742.40
-2026-03-10,Criteo Prospecting - Beauty,CRT-002,271.40,111600,573,1638.40,34,13,538.40
-2026-03-10,Criteo Dynamic - Sports,CRT-003,220.60,78800,675,1332.40,28,11,422.40
-2026-03-10,Criteo Upper Funnel - Travel,CRT-004,160.40,270000,388,966.40,19,7,292.40
-2026-03-11,Criteo Retargeting - Fashion,CRT-001,324.40,145200,752,1912.40,38,13,618.40
-2026-03-11,Criteo Prospecting - Beauty,CRT-002,224.40,95400,480,1368.40,28,11,448.40
-2026-03-11,Criteo Dynamic - Sports,CRT-003,185.40,66600,572,1116.40,24,9,358.40
-2026-03-11,Criteo Upper Funnel - Travel,CRT-004,134.40,224400,325,816.40,16,6,248.40
-2026-03-12,Criteo Retargeting - Fashion,CRT-001,338.40,151000,782,1992.40,40,13,642.40
-2026-03-12,Criteo Prospecting - Beauty,CRT-002,234.40,99000,500,1428.40,29,11,468.40
-2026-03-12,Criteo Dynamic - Sports,CRT-003,193.40,69400,596,1164.40,25,9,374.40
-2026-03-12,Criteo Upper Funnel - Travel,CRT-004,140.40,234400,338,846.40,17,6,258.40
-2026-03-13,Criteo Retargeting - Fashion,CRT-001,352.40,156800,812,2072.40,41,14,668.40
-2026-03-13,Criteo Prospecting - Beauty,CRT-002,244.40,102600,520,1488.40,30,12,488.40
-2026-03-13,Criteo Dynamic - Sports,CRT-003,201.40,72200,618,1212.40,26,10,386.40
-2026-03-13,Criteo Upper Funnel - Travel,CRT-004,146.40,244400,352,876.40,17,6,266.40
+Day,CampaignName,CampaignId,Cost,Displays,Clicks,Revenue,Orders,NewCustomerOrders,NewCustomerRevenue,Creative Format,Placement Type
+2026-02-12,Criteo Retargeting – Fashion,CRT-001,275.93,126311,740,2017.82,30,9,617.45,Display – Dynamic,On-site Search
+2026-02-12,Criteo Prospecting – Beauty,CRT-002,193.11,78719,376,1025.98,26,10,394.61,Sponsored Brand Banner,On-site Browse
+2026-02-12,Criteo Dynamic – Sports,CRT-003,144.94,60646,458,937.77,22,7,292.41,Display – Static,On-site Homepage
+2026-02-12,Criteo Upper Funnel – Travel,CRT-004,122.12,197810,293,727.51,15,6,291.0,Native Carousel,Off-site – Open Web
+2026-02-13,Criteo Retargeting – Fashion,CRT-001,290.38,130761,602,1675.92,38,10,476.31,Display – Dynamic,On-site Search
+2026-02-13,Criteo Prospecting – Beauty,CRT-002,204.0,78273,447,1207.13,24,10,467.76,Sponsored Brand Banner,On-site Browse
+2026-02-13,Criteo Dynamic – Sports,CRT-003,161.05,60789,521,1071.55,23,7,342.43,Display – Static,On-site Homepage
+2026-02-13,Criteo Upper Funnel – Travel,CRT-004,108.87,215723,264,649.08,14,5,229.5,Native Carousel,Off-site – Open Web
+2026-02-14,Criteo Retargeting – Fashion,CRT-001,277.56,121881,703,1755.89,37,12,603.65,Display – Dynamic,On-site Search
+2026-02-14,Criteo Prospecting – Beauty,CRT-002,213.08,79440,461,1067.21,24,10,431.33,Sponsored Brand Banner,On-site Browse
+2026-02-14,Criteo Dynamic – Sports,CRT-003,169.88,60809,489,932.94,19,7,367.77,Display – Static,On-site Homepage
+2026-02-14,Criteo Upper Funnel – Travel,CRT-004,112.42,201418,283,752.98,12,3,180.72,Native Carousel,Off-site – Open Web
+2026-02-15,Criteo Retargeting – Fashion,CRT-001,267.77,124952,671,1877.58,39,13,607.08,Display – Dynamic,On-site Search
+2026-02-15,Criteo Prospecting – Beauty,CRT-002,189.97,86360,407,1060.48,27,12,494.89,Sponsored Brand Banner,On-site Browse
+2026-02-15,Criteo Dynamic – Sports,CRT-003,184.09,54599,478,840.51,18,6,299.78,Display – Static,On-site Homepage
+2026-02-15,Criteo Upper Funnel – Travel,CRT-004,123.52,209596,277,651.87,15,5,232.5,Native Carousel,Off-site – Open Web
+2026-02-16,Criteo Retargeting – Fashion,CRT-001,301.77,119698,625,1824.11,37,10,473.28,Display – Dynamic,On-site Search
+2026-02-16,Criteo Prospecting – Beauty,CRT-002,209.14,84794,452,1106.61,22,8,390.33,Sponsored Brand Banner,On-site Browse
+2026-02-16,Criteo Dynamic – Sports,CRT-003,160.66,63360,539,872.97,19,7,328.05,Display – Static,On-site Homepage
+2026-02-16,Criteo Upper Funnel – Travel,CRT-004,131.47,209375,311,763.0,13,5,284.66,Native Carousel,Off-site – Open Web
+2026-02-17,Criteo Retargeting – Fashion,CRT-001,247.31,140389,620,1846.06,31,8,509.75,Display – Dynamic,On-site Search
+2026-02-17,Criteo Prospecting – Beauty,CRT-002,179.6,83160,375,1424.42,27,12,601.42,Sponsored Brand Banner,On-site Browse
+2026-02-17,Criteo Dynamic – Sports,CRT-003,174.1,56942,553,838.95,21,6,256.48,Display – Static,On-site Homepage
+2026-02-17,Criteo Upper Funnel – Travel,CRT-004,112.16,207976,319,731.73,12,4,234.15,Native Carousel,Off-site – Open Web
+2026-02-18,Criteo Retargeting – Fashion,CRT-001,311.4,126035,639,1893.29,38,12,615.82,Display – Dynamic,On-site Search
+2026-02-18,Criteo Prospecting – Beauty,CRT-002,169.99,88446,472,1132.47,24,8,385.04,Sponsored Brand Banner,On-site Browse
+2026-02-18,Criteo Dynamic – Sports,CRT-003,168.74,58843,546,971.7,22,7,302.99,Display – Static,On-site Homepage
+2026-02-18,Criteo Upper Funnel – Travel,CRT-004,103.68,187415,311,681.99,12,3,163.68,Native Carousel,Off-site – Open Web
+2026-02-19,Criteo Retargeting – Fashion,CRT-001,262.39,139899,666,2026.86,32,8,486.45,Display – Dynamic,On-site Search
+2026-02-19,Criteo Prospecting – Beauty,CRT-002,190.62,85143,378,1287.47,28,11,480.5,Sponsored Brand Banner,On-site Browse
+2026-02-19,Criteo Dynamic – Sports,CRT-003,171.04,63727,539,931.99,18,7,387.81,Display – Static,On-site Homepage
+2026-02-19,Criteo Upper Funnel – Travel,CRT-004,110.74,192673,278,839.03,14,4,237.33,Native Carousel,Off-site – Open Web
+2026-02-20,Criteo Retargeting – Fashion,CRT-001,326.8,127442,704,1875.8,35,10,557.38,Display – Dynamic,On-site Search
+2026-02-20,Criteo Prospecting – Beauty,CRT-002,209.77,80082,438,1195.56,26,9,442.82,Sponsored Brand Banner,On-site Browse
+2026-02-20,Criteo Dynamic – Sports,CRT-003,143.15,61172,556,998.17,19,6,305.76,Display – Static,On-site Homepage
+2026-02-20,Criteo Upper Funnel – Travel,CRT-004,118.72,185817,276,779.45,14,4,236.06,Native Carousel,Off-site – Open Web
+2026-02-21,Criteo Retargeting – Fashion,CRT-001,280.34,117023,714,1534.26,34,12,546.92,Display – Dynamic,On-site Search
+2026-02-21,Criteo Prospecting – Beauty,CRT-002,202.51,87498,463,1018.85,25,8,339.07,Sponsored Brand Banner,On-site Browse
+2026-02-21,Criteo Dynamic – Sports,CRT-003,165.81,52942,495,943.41,18,7,396.23,Display – Static,On-site Homepage
+2026-02-21,Criteo Upper Funnel – Travel,CRT-004,133.38,182723,310,609.66,14,4,181.16,Native Carousel,Off-site – Open Web
+2026-02-22,Criteo Retargeting – Fashion,CRT-001,307.73,139097,705,1679.58,34,12,628.36,Display – Dynamic,On-site Search
+2026-02-22,Criteo Prospecting – Beauty,CRT-002,223.28,89709,381,1293.68,23,10,596.22,Sponsored Brand Banner,On-site Browse
+2026-02-22,Criteo Dynamic – Sports,CRT-003,143.47,61002,491,1006.11,20,6,313.91,Display – Static,On-site Homepage
+2026-02-22,Criteo Upper Funnel – Travel,CRT-004,134.94,208543,319,706.9,14,4,193.89,Native Carousel,Off-site – Open Web
+2026-02-23,Criteo Retargeting – Fashion,CRT-001,271.85,124232,646,2016.9,39,10,480.95,Display – Dynamic,On-site Search
+2026-02-23,Criteo Prospecting – Beauty,CRT-002,208.56,77912,401,1095.49,22,9,416.78,Sponsored Brand Banner,On-site Browse
+2026-02-23,Criteo Dynamic – Sports,CRT-003,166.75,63722,552,842.76,17,6,294.47,Display – Static,On-site Homepage
+2026-02-23,Criteo Upper Funnel – Travel,CRT-004,119.41,181899,267,726.67,13,4,234.77,Native Carousel,Off-site – Open Web
+2026-02-24,Criteo Retargeting – Fashion,CRT-001,304.79,125649,745,1813.47,38,12,549.77,Display – Dynamic,On-site Search
+2026-02-24,Criteo Prospecting – Beauty,CRT-002,221.46,94480,399,1181.76,25,8,381.94,Sponsored Brand Banner,On-site Browse
+2026-02-24,Criteo Dynamic – Sports,CRT-003,166.46,55069,521,1057.11,24,7,332.99,Display – Static,On-site Homepage
+2026-02-24,Criteo Upper Funnel – Travel,CRT-004,133.63,203179,317,680.78,14,5,228.55,Native Carousel,Off-site – Open Web
+2026-02-25,Criteo Retargeting – Fashion,CRT-001,274.44,139920,735,1738.93,31,10,594.6,Display – Dynamic,On-site Search
+2026-02-25,Criteo Prospecting – Beauty,CRT-002,177.77,92572,378,1243.64,27,10,451.4,Sponsored Brand Banner,On-site Browse
+2026-02-25,Criteo Dynamic – Sports,CRT-003,150.09,57611,523,853.1,24,9,297.52,Display – Static,On-site Homepage
+2026-02-25,Criteo Upper Funnel – Travel,CRT-004,125.95,190683,256,668.32,16,6,255.63,Native Carousel,Off-site – Open Web
+2026-02-26,Criteo Retargeting – Fashion,CRT-001,316.94,121365,748,1889.2,36,10,524.78,Display – Dynamic,On-site Search
+2026-02-26,Criteo Prospecting – Beauty,CRT-002,221.06,88310,409,1407.73,21,7,502.09,Sponsored Brand Banner,On-site Browse
+2026-02-26,Criteo Dynamic – Sports,CRT-003,184.46,54122,536,1166.25,24,8,400.41,Display – Static,On-site Homepage
+2026-02-26,Criteo Upper Funnel – Travel,CRT-004,125.21,204193,280,738.61,13,5,281.24,Native Carousel,Off-site – Open Web
+2026-02-27,Criteo Retargeting – Fashion,CRT-001,297.72,125306,664,1670.7,35,12,538.44,Display – Dynamic,On-site Search
+2026-02-27,Criteo Prospecting – Beauty,CRT-002,227.73,92784,468,1358.96,24,9,494.32,Sponsored Brand Banner,On-site Browse
+2026-02-27,Criteo Dynamic – Sports,CRT-003,139.92,55825,535,875.84,21,9,364.1,Display – Static,On-site Homepage
+2026-02-27,Criteo Upper Funnel – Travel,CRT-004,107.25,193274,298,742.99,12,4,250.14,Native Carousel,Off-site – Open Web
+2026-02-28,Criteo Retargeting – Fashion,CRT-001,322.92,126261,663,1912.61,35,12,649.19,Display – Dynamic,On-site Search
+2026-02-28,Criteo Prospecting – Beauty,CRT-002,212.9,88940,392,1067.99,28,10,408.12,Sponsored Brand Banner,On-site Browse
+2026-02-28,Criteo Dynamic – Sports,CRT-003,164.05,62715,448,1004.45,18,7,363.28,Display – Static,On-site Homepage
+2026-02-28,Criteo Upper Funnel – Travel,CRT-004,100.53,187210,279,618.64,12,3,146.93,Native Carousel,Off-site – Open Web
+2026-03-01,Criteo Retargeting – Fashion,CRT-001,281.24,117180,756,1837.33,37,12,613.77,Display – Dynamic,On-site Search
+2026-03-01,Criteo Prospecting – Beauty,CRT-002,170.09,90878,372,1016.75,25,10,374.16,Sponsored Brand Banner,On-site Browse
+2026-03-01,Criteo Dynamic – Sports,CRT-003,177.22,63243,496,1100.46,19,6,371.84,Display – Static,On-site Homepage
+2026-03-01,Criteo Upper Funnel – Travel,CRT-004,118.86,193992,274,755.38,13,5,278.91,Native Carousel,Off-site – Open Web
+2026-03-02,Criteo Retargeting – Fashion,CRT-001,276.18,127424,701,1730.23,31,9,487.26,Display – Dynamic,On-site Search
+2026-03-02,Criteo Prospecting – Beauty,CRT-002,218.59,80041,454,1422.14,21,7,464.57,Sponsored Brand Banner,On-site Browse
+2026-03-02,Criteo Dynamic – Sports,CRT-003,156.03,59998,448,1042.82,19,6,329.31,Display – Static,On-site Homepage
+2026-03-02,Criteo Upper Funnel – Travel,CRT-004,115.66,199910,262,823.53,11,3,213.37,Native Carousel,Off-site – Open Web
+2026-03-03,Criteo Retargeting – Fashion,CRT-001,316.47,133772,719,1617.64,29,9,532.15,Display – Dynamic,On-site Search
+2026-03-03,Criteo Prospecting – Beauty,CRT-002,202.79,78478,393,1395.98,26,9,517.05,Sponsored Brand Banner,On-site Browse
+2026-03-03,Criteo Dynamic – Sports,CRT-003,166.23,58725,559,852.37,19,8,344.54,Display – Static,On-site Homepage
+2026-03-03,Criteo Upper Funnel – Travel,CRT-004,129.85,203703,319,684.0,16,4,179.55,Native Carousel,Off-site – Open Web
+2026-03-04,Criteo Retargeting – Fashion,CRT-001,301.19,117769,726,1901.88,33,8,433.4,Display – Dynamic,On-site Search
+2026-03-04,Criteo Prospecting – Beauty,CRT-002,183.01,79890,414,1261.43,27,11,472.8,Sponsored Brand Banner,On-site Browse
+2026-03-04,Criteo Dynamic – Sports,CRT-003,150.98,59581,503,903.81,23,8,298.65,Display – Static,On-site Homepage
+2026-03-04,Criteo Upper Funnel – Travel,CRT-004,121.04,203108,260,793.14,13,4,251.36,Native Carousel,Off-site – Open Web
+2026-03-05,Criteo Retargeting – Fashion,CRT-001,249.26,120253,695,1881.64,38,11,566.47,Display – Dynamic,On-site Search
+2026-03-05,Criteo Prospecting – Beauty,CRT-002,188.06,80891,382,1011.96,25,11,436.36,Sponsored Brand Banner,On-site Browse
+2026-03-05,Criteo Dynamic – Sports,CRT-003,150.81,54370,452,889.95,24,10,348.56,Display – Static,On-site Homepage
+2026-03-05,Criteo Upper Funnel – Travel,CRT-004,103.47,214521,261,749.72,13,5,265.29,Native Carousel,Off-site – Open Web
+2026-03-06,Criteo Retargeting – Fashion,CRT-001,277.63,140731,619,1889.53,36,10,530.12,Display – Dynamic,On-site Search
+2026-03-06,Criteo Prospecting – Beauty,CRT-002,179.27,89875,392,1067.53,25,10,427.01,Sponsored Brand Banner,On-site Browse
+2026-03-06,Criteo Dynamic – Sports,CRT-003,140.77,59321,476,969.46,24,7,277.1,Display – Static,On-site Homepage
+2026-03-06,Criteo Upper Funnel – Travel,CRT-004,133.73,210692,275,715.26,12,4,219.35,Native Carousel,Off-site – Open Web
+2026-03-07,Criteo Retargeting – Fashion,CRT-001,276.08,135522,695,1937.0,33,11,626.3,Display – Dynamic,On-site Search
+2026-03-07,Criteo Prospecting – Beauty,CRT-002,217.83,81860,409,1143.13,24,9,415.81,Sponsored Brand Banner,On-site Browse
+2026-03-07,Criteo Dynamic – Sports,CRT-003,184.58,57428,478,1076.2,24,8,347.97,Display – Static,On-site Homepage
+2026-03-07,Criteo Upper Funnel – Travel,CRT-004,110.22,203951,296,630.02,15,4,169.69,Native Carousel,Off-site – Open Web
+2026-03-08,Criteo Retargeting – Fashion,CRT-001,288.9,137538,738,1471.33,39,13,524.77,Display – Dynamic,On-site Search
+2026-03-08,Criteo Prospecting – Beauty,CRT-002,181.67,86946,459,1038.56,27,12,433.89,Sponsored Brand Banner,On-site Browse
+2026-03-08,Criteo Dynamic – Sports,CRT-003,152.42,56339,525,878.64,23,8,284.22,Display – Static,On-site Homepage
+2026-03-08,Criteo Upper Funnel – Travel,CRT-004,135.37,209607,301,734.22,16,5,231.74,Native Carousel,Off-site – Open Web
+2026-03-09,Criteo Retargeting – Fashion,CRT-001,309.86,126981,735,1811.02,29,7,454.63,Display – Dynamic,On-site Search
+2026-03-09,Criteo Prospecting – Beauty,CRT-002,208.41,89032,392,1278.82,21,9,591.91,Sponsored Brand Banner,On-site Browse
+2026-03-09,Criteo Dynamic – Sports,CRT-003,170.63,58747,537,939.01,23,7,262.92,Display – Static,On-site Homepage
+2026-03-09,Criteo Upper Funnel – Travel,CRT-004,109.46,211667,316,740.07,16,6,266.43,Native Carousel,Off-site – Open Web
+2026-03-10,Criteo Retargeting – Fashion,CRT-001,274.24,130373,748,1868.91,30,10,672.81,Display – Dynamic,On-site Search
+2026-03-10,Criteo Prospecting – Beauty,CRT-002,197.97,87080,424,1392.56,22,7,465.24,Sponsored Brand Banner,On-site Browse
+2026-03-10,Criteo Dynamic – Sports,CRT-003,173.19,57907,480,942.91,20,8,377.16,Display – Static,On-site Homepage
+2026-03-10,Criteo Upper Funnel – Travel,CRT-004,117.16,206915,307,680.83,13,4,219.96,Native Carousel,Off-site – Open Web
+2026-03-11,Criteo Retargeting – Fashion,CRT-001,252.09,126441,625,1860.94,30,9,558.28,Display – Dynamic,On-site Search
+2026-03-11,Criteo Prospecting – Beauty,CRT-002,202.1,88245,442,1187.08,28,10,445.16,Sponsored Brand Banner,On-site Browse
+2026-03-11,Criteo Dynamic – Sports,CRT-003,168.31,55253,522,1049.82,23,7,332.29,Display – Static,On-site Homepage
+2026-03-11,Criteo Upper Funnel – Travel,CRT-004,131.56,207663,304,698.15,16,4,165.81,Native Carousel,Off-site – Open Web
+2026-03-12,Criteo Retargeting – Fashion,CRT-001,306.57,117250,745,1516.17,36,10,412.74,Display – Dynamic,On-site Search
+2026-03-12,Criteo Prospecting – Beauty,CRT-002,180.92,81134,404,1288.68,28,11,516.39,Sponsored Brand Banner,On-site Browse
+2026-03-12,Criteo Dynamic – Sports,CRT-003,167.41,61817,455,944.56,24,8,330.6,Display – Static,On-site Homepage
+2026-03-12,Criteo Upper Funnel – Travel,CRT-004,125.29,197693,260,768.35,13,4,226.96,Native Carousel,Off-site – Open Web
+2026-03-13,Criteo Retargeting – Fashion,CRT-001,252.25,127432,634,1761.29,34,10,523.21,Display – Dynamic,On-site Search
+2026-03-13,Criteo Prospecting – Beauty,CRT-002,194.41,93347,452,1233.24,23,10,509.38,Sponsored Brand Banner,On-site Browse
+2026-03-13,Criteo Dynamic – Sports,CRT-003,151.74,55265,481,1112.64,17,6,420.19,Display – Static,On-site Homepage
+2026-03-13,Criteo Upper Funnel – Travel,CRT-004,117.46,190987,299,840.64,15,6,336.26,Native Carousel,Off-site – Open Web

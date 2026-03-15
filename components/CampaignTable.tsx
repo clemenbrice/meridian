@@ -35,9 +35,16 @@ export default function CampaignTable({ campaigns }: Props) {
                 {c.campaign_name}
               </td>
               <td className="py-3 pr-4">
-                <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium capitalize ${NETWORK_BADGE[c.network] ?? 'bg-gray-100 text-gray-600'}`}>
-                  {c.network}
-                </span>
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium capitalize ${NETWORK_BADGE[c.network] ?? 'bg-gray-100 text-gray-600'}`}>
+                    {c.network}
+                  </span>
+                  {c.attributed_window && (
+                    <span className="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-mono font-medium bg-gray-100 text-gray-500">
+                      {c.attributed_window}
+                    </span>
+                  )}
+                </div>
               </td>
               <td className="py-3 pr-4 tabular-nums text-gray-700">{fmt$(c.spend)}</td>
               <td className="py-3 pr-4 tabular-nums text-gray-700">{fmt$(c.revenue)}</td>

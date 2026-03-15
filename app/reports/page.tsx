@@ -5,7 +5,13 @@ import { Download, Filter } from 'lucide-react';
 import { NetworkAggregate, DailyAggregate, CampaignAggregate, KPIs } from '@/lib/calculations';
 
 type Range = '7d' | '30d' | '90d' | 'custom';
-type MetricKey = 'ad_spend' | 'impressions' | 'clicks' | 'attributed_revenue' | 'attributed_orders' | 'new_to_brand_orders' | 'roas' | 'ntb_rate';
+type MetricKey =
+  | 'ad_spend' | 'attributed_revenue' | 'roas'
+  | 'impressions' | 'clicks' | 'attributed_orders'
+  | 'new_to_brand_orders' | 'ntb_rate'
+  | 'ctr' | 'cpc'
+  | 'detail_page_views' | 'add_to_cart'
+  | 'campaign_type' | 'placement' | 'attributed_window';
 
 interface MetricsResponse {
   dateRange: { start: string; end: string };
@@ -16,15 +22,22 @@ interface MetricsResponse {
   availableNetworks: string[];
 }
 
-const ALL_METRICS: { key: MetricKey; label: string }[] = [
-  { key: 'ad_spend', label: 'Spend' },
-  { key: 'attributed_revenue', label: 'Revenue' },
-  { key: 'roas', label: 'ROAS' },
-  { key: 'impressions', label: 'Impressions' },
-  { key: 'clicks', label: 'Clicks' },
-  { key: 'attributed_orders', label: 'Orders' },
-  { key: 'new_to_brand_orders', label: 'NTB Orders' },
-  { key: 'ntb_rate', label: 'NTB Rate' },
+const ALL_METRICS: { key: MetricKey; label: string; group: string }[] = [
+  { key: 'ad_spend',           label: 'Spend',              group: 'Core' },
+  { key: 'attributed_revenue', label: 'Revenue',            group: 'Core' },
+  { key: 'roas',               label: 'ROAS',               group: 'Core' },
+  { key: 'attributed_orders',  label: 'Orders',             group: 'Core' },
+  { key: 'impressions',        label: 'Impressions',        group: 'Core' },
+  { key: 'clicks',             label: 'Clicks',             group: 'Core' },
+  { key: 'ctr',                label: 'CTR',                group: 'Efficiency' },
+  { key: 'cpc',                label: 'CPC',                group: 'Efficiency' },
+  { key: 'new_to_brand_orders',label: 'NTB Orders',         group: 'NTB' },
+  { key: 'ntb_rate',           label: 'NTB Rate',           group: 'NTB' },
+  { key: 'detail_page_views',  label: 'Detail Page Views',  group: 'Funnel' },
+  { key: 'add_to_cart',        label: 'Add to Cart',        group: 'Funnel' },
+  { key: 'campaign_type',      label: 'Campaign Type',      group: 'Dimensions' },
+  { key: 'placement',          label: 'Placement',          group: 'Dimensions' },
+  { key: 'attributed_window',  label: 'Attribution Window', group: 'Dimensions' },
 ];
 
 const ROWS_PER_PAGE = 15;
@@ -32,25 +45,40 @@ const ROWS_PER_PAGE = 15;
 const fmt$ = (v: number) =>
   new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(v);
 
+const fmtCPC = (v: number) =>
+  new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v);
+
 function fmtMetric(key: MetricKey, row: CampaignAggregate): string {
   switch (key) {
-    case 'ad_spend': return fmt$(row.spend);
-    case 'attributed_revenue': return fmt$(row.revenue);
-    case 'roas': return `${row.roas.toFixed(2)}x`;
-    case 'impressions': return row.impressions.toLocaleString();
-    case 'clicks': return row.clicks.toLocaleString();
-    case 'attributed_orders': return row.orders.toLocaleString();
+    case 'ad_spend':            return fmt$(row.spend);
+    case 'attributed_revenue':  return fmt$(row.revenue);
+    case 'roas':                return `${row.roas.toFixed(2)}x`;
+    case 'impressions':         return row.impressions.toLocaleString();
+    case 'clicks':              return row.clicks.toLocaleString();
+    case 'attributed_orders':   return row.orders.toLocaleString();
     case 'new_to_brand_orders': return row.ntbOrders.toLocaleString();
-    case 'ntb_rate': return `${(row.ntbRate * 100).toFixed(1)}%`;
-    default: return '';
+    case 'ntb_rate':            return `${(row.ntbRate * 100).toFixed(1)}%`;
+    case 'ctr':                 return `${(row.ctr * 100).toFixed(2)}%`;
+    case 'cpc':                 return row.cpc !== null ? fmtCPC(row.cpc) : '—';
+    case 'detail_page_views':   return row.detail_page_views > 0 ? row.detail_page_views.toLocaleString() : '—';
+    case 'add_to_cart':         return row.add_to_cart > 0 ? row.add_to_cart.toLocaleString() : '—';
+    case 'campaign_type':       return row.campaign_type ?? '—';
+    case 'placement':           return '—'; // not in CampaignAggregate (aggregated away)
+    case 'attributed_window':   return row.attributed_window ?? '—';
+    default:                    return '';
   }
 }
+
+// Group metric options by category
+const METRIC_GROUPS = Array.from(new Set(ALL_METRICS.map(m => m.group)));
 
 export default function ReportsPage() {
   const [range, setRange] = useState<Range>('30d');
   const [customStart, setCustomStart] = useState('');
   const [customEnd, setCustomEnd] = useState('');
-  const [selectedMetrics, setSelectedMetrics] = useState<MetricKey[]>(['ad_spend', 'attributed_revenue', 'roas', 'attributed_orders', 'ntb_rate']);
+  const [selectedMetrics, setSelectedMetrics] = useState<MetricKey[]>([
+    'ad_spend', 'attributed_revenue', 'roas', 'attributed_orders', 'ntb_rate', 'ctr', 'cpc',
+  ]);
   const [selectedNetworks, setSelectedNetworks] = useState<string[]>([]);
   const [data, setData] = useState<MetricsResponse | null>(null);
   const [loading, setLoading] = useState(true);
@@ -95,7 +123,8 @@ export default function ReportsPage() {
 
   function exportCSV() {
     if (!data) return;
-    const headers = ['Campaign', 'Network', ...selectedMetrics.map(k => ALL_METRICS.find(m => m.key === k)?.label ?? k)];
+    const metricLabels = selectedMetrics.map(k => ALL_METRICS.find(m => m.key === k)?.label ?? k);
+    const headers = ['Campaign', 'Network', ...metricLabels];
     const rows = data.topCampaigns.map(c => [
       c.campaign_name,
       c.network,
@@ -194,20 +223,27 @@ export default function ReportsPage() {
             </div>
           </div>
 
-          {/* Metrics */}
+          {/* Metrics — grouped */}
           <div>
             <label className="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wide">Metrics</label>
-            <div className="space-y-1">
-              {ALL_METRICS.map(m => (
-                <label key={m.key} className="flex items-center gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={selectedMetrics.includes(m.key)}
-                    onChange={() => toggleMetric(m.key)}
-                    className="accent-indigo-600"
-                  />
-                  <span className="text-sm text-gray-700">{m.label}</span>
-                </label>
+            <div className="space-y-3">
+              {METRIC_GROUPS.map(group => (
+                <div key={group}>
+                  <p className="text-xs font-semibold text-gray-400 mb-1">{group}</p>
+                  <div className="space-y-1">
+                    {ALL_METRICS.filter(m => m.group === group).map(m => (
+                      <label key={m.key} className="flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={selectedMetrics.includes(m.key)}
+                          onChange={() => toggleMetric(m.key)}
+                          className="accent-indigo-600"
+                        />
+                        <span className="text-sm text-gray-700">{m.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -227,7 +263,7 @@ export default function ReportsPage() {
           <div className="p-8 text-center text-sm text-gray-400 animate-pulse">Loading report…</div>
         ) : campaigns.length === 0 ? (
           <div className="p-8 text-center text-sm text-gray-400">
-            No data for the selected filters. Upload some CSV files first.
+            No data for the selected filters. Upload some files first.
           </div>
         ) : (
           <>
@@ -262,7 +298,6 @@ export default function ReportsPage() {
               </table>
             </div>
 
-            {/* Pagination */}
             {totalPages > 1 && (
               <div className="px-5 py-3 border-t border-gray-100 flex items-center justify-between">
                 <p className="text-xs text-gray-400">
