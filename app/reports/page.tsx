@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
-import { Download, Filter } from 'lucide-react';
+import { Download, Filter, Presentation, Loader2 } from 'lucide-react';
 import { NetworkAggregate, DailyAggregate, CampaignAggregate, KPIs } from '@/lib/calculations';
 
 type Range = '7d' | '30d' | '90d' | 'custom';
@@ -83,6 +83,7 @@ export default function ReportsPage() {
   const [data, setData] = useState<MetricsResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [exporting, setExporting] = useState(false);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -121,6 +122,30 @@ export default function ReportsPage() {
     );
   }
 
+  async function exportPPTX() {
+    setExporting(true);
+    try {
+      let url = `/api/export/pptx?range=${range}`;
+      if (range === 'custom' && customStart && customEnd) {
+        url += `&start=${customStart}&end=${customEnd}`;
+      }
+      if (selectedNetworks.length > 0) {
+        url += `&networks=${selectedNetworks.join(',')}`;
+      }
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('Failed to generate');
+      const blob = await res.blob();
+      const objUrl = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = objUrl;
+      a.download = `meridian-report.pptx`;
+      a.click();
+      URL.revokeObjectURL(objUrl);
+    } finally {
+      setExporting(false);
+    }
+  }
+
   function exportCSV() {
     if (!data) return;
     const metricLabels = selectedMetrics.map(k => ALL_METRICS.find(m => m.key === k)?.label ?? k);
@@ -151,14 +176,24 @@ export default function ReportsPage() {
           <h1 className="text-2xl font-bold text-gray-900">Report Builder</h1>
           <p className="text-sm text-gray-500 mt-1">Select date range, networks, and metrics to build your report.</p>
         </div>
-        <button
-          onClick={exportCSV}
-          disabled={!data || campaigns.length === 0}
-          className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-40 transition-colors"
-        >
-          <Download className="w-4 h-4" />
-          Export CSV
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={exportPPTX}
+            disabled={!data || campaigns.length === 0 || exporting}
+            className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 text-gray-700 text-sm font-medium rounded-lg hover:border-indigo-300 disabled:opacity-40 transition-colors"
+          >
+            {exporting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Presentation className="w-4 h-4" />}
+            {exporting ? 'Generating…' : 'Export PPT'}
+          </button>
+          <button
+            onClick={exportCSV}
+            disabled={!data || campaigns.length === 0}
+            className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-40 transition-colors"
+          >
+            <Download className="w-4 h-4" />
+            Export CSV
+          </button>
+        </div>
       </div>
 
       {/* Filters */}

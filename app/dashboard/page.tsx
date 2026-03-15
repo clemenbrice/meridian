@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
-import { ChevronRight, X, Presentation, Loader2 } from 'lucide-react';
+import { ChevronRight, X } from 'lucide-react';
 import KPICard from '@/components/KPICard';
 import { ROASByNetworkChart, SpendRevenueTrendChart, NTBDonutChart } from '@/components/NetworkChart';
 import CampaignTable from '@/components/CampaignTable';
@@ -90,7 +90,6 @@ export default function DashboardPage() {
   const [data, setData] = useState<MetricsResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [exporting, setExporting] = useState(false);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -126,35 +125,6 @@ export default function DashboardPage() {
     );
   }
 
-  async function exportPPTX() {
-    setExporting(true);
-    try {
-      let url = `/api/export/pptx?range=${range}`;
-      if (range === 'custom' && customStart && customEnd) {
-        url += `&start=${customStart}&end=${customEnd}`;
-      }
-      if (selectedNetworks.length > 0) {
-        url += `&networks=${selectedNetworks.join(',')}`;
-      }
-      const res = await fetch(url);
-      if (!res.ok) {
-        const err = await res.json();
-        throw new Error(err.error ?? 'Failed to generate');
-      }
-      const blob = await res.blob();
-      const objUrl = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = objUrl;
-      a.download = `meridian-report.pptx`;
-      a.click();
-      URL.revokeObjectURL(objUrl);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Export failed');
-    } finally {
-      setExporting(false);
-    }
-  }
-
   // Network spend breakdown helpers
   const totalSpendAllNetworks = data?.byNetwork.reduce((s, n) => s + n.spend, 0) ?? 0;
 
@@ -171,16 +141,6 @@ export default function DashboardPage() {
               {data.dateRange.start} — {data.dateRange.end}
             </p>
           )}
-          <button
-            onClick={exportPPTX}
-            disabled={!data || loading || exporting}
-            className="mt-2 flex items-center gap-2 px-3 py-1.5 bg-indigo-600 text-white text-xs font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-40 transition-colors"
-          >
-            {exporting
-              ? <Loader2 className="w-3.5 h-3.5 animate-spin" />
-              : <Presentation className="w-3.5 h-3.5" />}
-            {exporting ? 'Generating…' : 'Export PPT'}
-          </button>
         </div>
 
         {/* Date range picker */}
